@@ -15,6 +15,8 @@
 		CFC5505A2C10F13A00F08E21 /* NewsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550592C10F13A00F08E21 /* NewsAppUITests.swift */; };
 		CFC5505C2C10F13A00F08E21 /* NewsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5505B2C10F13A00F08E21 /* NewsAppUITestsLaunchTests.swift */; };
 		CFC550702C10FBE200F08E21 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFC5506E2C10FBE200F08E21 /* Localizable.strings */; };
+		CFC5507E2C10FE4F00F08E21 /* KeychainManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5507D2C10FE4F00F08E21 /* KeychainManagerProtocol.swift */; };
+		CFC550812C10FF4600F08E21 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550802C10FF4600F08E21 /* KeyChainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		CFC5505B2C10F13A00F08E21 /* NewsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CFC5506F2C10FBE200F08E21 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFC550712C10FBF000F08E21 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CFC5507D2C10FE4F00F08E21 /* KeychainManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerProtocol.swift; sourceTree = "<group>"; };
+		CFC550802C10FF4600F08E21 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +211,7 @@
 		CFC550742C10FC6B00F08E21 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				CFC5507F2C10FF2800F08E21 /* KeyChain */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -265,6 +270,15 @@
 			children = (
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		CFC5507F2C10FF2800F08E21 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				CFC5507D2C10FE4F00F08E21 /* KeychainManagerProtocol.swift */,
+				CFC550802C10FF4600F08E21 /* KeyChainManager.swift */,
+			);
+			path = KeyChain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,7 +414,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC550412C10F13800F08E21 /* ContentView.swift in Sources */,
+				CFC5507E2C10FE4F00F08E21 /* KeychainManagerProtocol.swift in Sources */,
 				CFC5503F2C10F13800F08E21 /* NewsApp.swift in Sources */,
+				CFC550812C10FF4600F08E21 /* KeyChainManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
