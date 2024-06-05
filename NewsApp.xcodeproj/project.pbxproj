@@ -17,6 +17,9 @@
 		CFC550702C10FBE200F08E21 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CFC5506E2C10FBE200F08E21 /* Localizable.strings */; };
 		CFC5507E2C10FE4F00F08E21 /* KeychainManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5507D2C10FE4F00F08E21 /* KeychainManagerProtocol.swift */; };
 		CFC550812C10FF4600F08E21 /* KeyChainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550802C10FF4600F08E21 /* KeyChainManager.swift */; };
+		CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550822C11009700F08E21 /* AppCoordinator.swift */; };
+		CFC550852C1100C300F08E21 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550842C1100C300F08E21 /* OnboardingCoordinator.swift */; };
+		CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550862C1100D200F08E21 /* HeadlinesCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		CFC550712C10FBF000F08E21 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CFC5507D2C10FE4F00F08E21 /* KeychainManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerProtocol.swift; sourceTree = "<group>"; };
 		CFC550802C10FF4600F08E21 /* KeyChainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainManager.swift; sourceTree = "<group>"; };
+		CFC550822C11009700F08E21 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		CFC550842C1100C300F08E21 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		CFC550862C1100D200F08E21 /* HeadlinesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +274,9 @@
 		CFC5507C2C10FCEE00F08E21 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				CFC550822C11009700F08E21 /* AppCoordinator.swift */,
+				CFC550842C1100C300F08E21 /* OnboardingCoordinator.swift */,
+				CFC550862C1100D200F08E21 /* HeadlinesCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -414,7 +423,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC550412C10F13800F08E21 /* ContentView.swift in Sources */,
+				CFC550852C1100C300F08E21 /* OnboardingCoordinator.swift in Sources */,
 				CFC5507E2C10FE4F00F08E21 /* KeychainManagerProtocol.swift in Sources */,
+				CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */,
+				CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */,
 				CFC5503F2C10F13800F08E21 /* NewsApp.swift in Sources */,
 				CFC550812C10FF4600F08E21 /* KeyChainManager.swift in Sources */,
 			);
