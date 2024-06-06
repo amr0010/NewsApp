@@ -13,8 +13,10 @@ class AppCoordinator: ObservableObject {
     @Published var headlinesCoordinator: HeadlinesCoordinator?
 
     private var cancellables = Set<AnyCancellable>()
+    private let diContainer: DIContainer
     
-    init() {
+    init(diContainer: DIContainer) {
+        self.diContainer = diContainer
         if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
             startOnboarding()
         } else {
@@ -31,12 +33,15 @@ class AppCoordinator: ObservableObject {
     }
     
     private func startOnboarding() {
-        onboardingCoordinator = OnboardingCoordinator()
-
+        onboardingCoordinator = OnboardingCoordinator(diContainer: diContainer)
+        onboardingCoordinator?.didFinishOnboarding
+            .sink(receiveValue: { [weak self] in
+                self?.finishOnboarding()
+            })
+            .store(in: &cancellables)
     }
     
     private func startHeadlines() {
-        headlinesCoordinator = HeadlinesCoordinator()
     }
     
     func finishOnboarding() {

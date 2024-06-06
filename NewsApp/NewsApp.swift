@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct NewsApp: App {
+    @StateObject private var appCoordinator = AppCoordinator(diContainer: DIContainer.shared)
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
-    }
-}
+            Group {
+                if let onboardingCoordinator = appCoordinator.onboardingCoordinator {
+                    OnboardingView(coordinator: onboardingCoordinator)
+                        .environmentObject(appCoordinator)
+                } else if let headlinesCoordinator = appCoordinator.headlinesCoordinator {
+                        ContentView()
+                        .environmentObject(appCoordinator)
+                }
+            }
+            .onAppear {
+                appCoordinator.start()
+            }
+          }
+      }
+  }
