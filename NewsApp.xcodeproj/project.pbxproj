@@ -66,6 +66,7 @@
 		CFC550F22C135EE700F08E21 /* HeadlinesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */; };
 		CFC550F42C13762100F08E21 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F32C13762100F08E21 /* ArticleRowView.swift */; };
 		CFC550F62C13763200F08E21 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F52C13763200F08E21 /* ArticleDetailView.swift */; };
+		CFC550F82C13860F00F08E21 /* SearchArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesTabView.swift; sourceTree = "<group>"; };
 		CFC550F32C13762100F08E21 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		CFC550F52C13763200F08E21 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
+		CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArticlesUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 				CFC550982C110FE600F08E21 /* FetchCategoriesUseCase.swift */,
 				CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */,
 				CFC550E32C135C1B00F08E21 /* FetchHeadlinesUseCase.swift */,
+				CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				CFC550852C1100C300F08E21 /* OnboardingCoordinator.swift in Sources */,
 				CFC550AD2C11195C00F08E21 /* SearchBar.swift in Sources */,
 				CFC550C92C12FC0600F08E21 /* CategoryEntity.swift in Sources */,
+				CFC550F82C13860F00F08E21 /* SearchArticlesUseCase.swift in Sources */,
 				CFC550B22C124F3A00F08E21 /* Constants.swift in Sources */,
 				CFC550A82C11127E00F08E21 /* APIClient.swift in Sources */,
 				CFC550A62C11121A00F08E21 /* CountryEntity.swift in Sources */,

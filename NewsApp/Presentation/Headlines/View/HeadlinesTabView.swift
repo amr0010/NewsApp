@@ -12,18 +12,24 @@ struct HeadlinesTabView: View {
     @State var presentArticleDetails = false
     
     var body: some View {
-        List(viewModel.articles) { article in
-            ArticleRowView(article: article)
-                .onTapGesture {
-                    presentArticleDetails.toggle()
-                }
-                .sheet(isPresented: $presentArticleDetails) { ArticleDetailView(article: article)
-                }
-        }
-        .navigationTitle("Headlines")
-       
-        .onAppear {
-            viewModel.loadHeadlines()
-        }
-    }
+           NavigationView {
+               VStack {
+                   SearchBar(text: $viewModel.searchText)
+                       .padding()
+                   
+                   List(viewModel.articles) { article in
+                       ArticleRowView(article: article)
+                           .onTapGesture {
+                               if let url = URL(string: article.url) {
+                                   UIApplication.shared.open(url)
+                               }
+                           }
+                   }
+                   .navigationTitle("Headlines")
+                   .onAppear {
+                       viewModel.loadHeadlines()
+                   }
+               }
+           }
+       }
 }

@@ -29,12 +29,22 @@ class RemoteDataSource {
             path: Constants.API.articlesPath,
             queryItems: [
                 URLQueryItem(
-                    name: "country", value: "us"),
+                    name: "country", value: onboardingEntity.selectedCountry),
                 URLQueryItem(
                 name: "apiKey", value: Constants.API.apiKey)]
         )
            return apiClient.fetch(endpoint: endpoint)
        }
     
+    func searchArticles(query: String) -> AnyPublisher<ArticlesResponseDTO, APIError> {
+            let endpoint = ArticlesAPIEndpoint(
+                path: Constants.API.everythingPath,
+                queryItems: [
+                    URLQueryItem(name: "q", value: query),
+                    URLQueryItem(name: "apiKey", value: Constants.API.apiKey)
+                ]
+            )
+            return apiClient.fetch(endpoint: endpoint)
+        }
 }
 

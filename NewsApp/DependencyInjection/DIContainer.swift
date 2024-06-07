@@ -61,8 +61,12 @@ class DIContainer {
     }()
     
     lazy var onboardingUseCase: OnboardingUseCaseProtocol = {
-            OnboardingUseCase(realmManager: realmManager)
-        }()
+        OnboardingUseCase(realmManager: realmManager)
+    }()
+    
+    lazy var searchArticlesUseCase: SearchArticlesUseCase = {
+        SearchArticlesUseCase(repository: articleRepository)
+    }()
     
     lazy var fetchHeadlinesUseCase: FetchHeadlinesUseCase = {
         FetchHeadlinesUseCase(repository: articleRepository)

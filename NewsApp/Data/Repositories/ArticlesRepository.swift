@@ -10,6 +10,8 @@ import Combine
 
 protocol ArticlesRepositoryProtocol {
     func fetchHeadlines(onboardingEntity: OnboardingEntity) -> AnyPublisher<[ArticleEntity], APIError>
+    func searchArticles(query: String) -> AnyPublisher<[ArticleEntity], APIError>
+
 }
 
 class ArticlesRepository: ArticlesRepositoryProtocol {
@@ -29,4 +31,12 @@ class ArticlesRepository: ArticlesRepositoryProtocol {
             }
             .eraseToAnyPublisher()
     }
+    
+    func searchArticles(query: String) -> AnyPublisher<[ArticleEntity], APIError> {
+           return remoteDataSource.searchArticles(query: query)
+               .map { response in
+                   self.mapper.mapToEntity(from: response.articles ?? [])
+               }
+               .eraseToAnyPublisher()
+       }
 }

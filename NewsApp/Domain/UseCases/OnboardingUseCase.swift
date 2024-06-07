@@ -24,7 +24,7 @@ class OnboardingUseCase: OnboardingUseCaseProtocol {
     func saveOnboardingData(selectedCountry: CountryEntity, selectedCategories: [CategoryEntity]) -> AnyPublisher<Void, Error> {
         return Future<Void, Error> { promise in
             let onboardingData = OnboardingEntity()
-            onboardingData.selectedCountry = selectedCountry.name
+            onboardingData.selectedCountry = selectedCountry.code
             onboardingData.selectedCategories.append(objectsIn: selectedCategories.map { $0.name })
 
             do {

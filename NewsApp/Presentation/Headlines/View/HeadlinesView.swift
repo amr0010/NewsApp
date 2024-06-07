@@ -16,7 +16,7 @@ struct HeadlinesView: View {
                 .tabItem {
                     Label("All Articles", systemImage: "list.bullet")
                 }
-            Text("sss")
+            Text("")
                 .tabItem {
                     Label("Saved Articles", systemImage: "bookmark")
                 }

@@ -47,7 +47,7 @@ class AppCoordinator: ObservableObject {
     }
     
     private func startHeadlines() {
-        let headlinesViewModel = HeadlinesViewModel(fetchHeadlinesUseCase: diContainer.fetchHeadlinesUseCase, onboardingUseCase: diContainer.onboardingUseCase)
+        let headlinesViewModel = HeadlinesViewModel(fetchHeadlinesUseCase: diContainer.fetchHeadlinesUseCase, onboardingUseCase: diContainer.onboardingUseCase, searchArticlesUseCase: diContainer.searchArticlesUseCase)
         headlinesCoordinator = HeadlinesCoordinator(headlinesViewModel: headlinesViewModel)
     }
     
