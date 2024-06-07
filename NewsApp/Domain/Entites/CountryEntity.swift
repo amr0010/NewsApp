@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CountryEntity: Identifiable {
+struct CountryEntity: Identifiable, EntityProtocol {
     let id = UUID()
     let code: String
     let name: String

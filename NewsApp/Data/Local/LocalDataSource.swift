@@ -8,9 +8,9 @@
 import Foundation
 
 class LocalDataSource {
-    private let realmManager: RealmManager
+    private let realmManager: RealmManagerProtocol
 
-    init(realmManager: RealmManager) {
+    init(realmManager: RealmManagerProtocol) {
         self.realmManager = realmManager
     }
 }

@@ -20,9 +20,9 @@ class DIContainer {
         RemoteDataSource(apiClient: apiClient)
     }()
 
-    lazy var realmManager: RealmManager = {
-        RealmManager()
-    }()
+    lazy var realmManager: RealmManagerProtocol = {
+            RealmManager()
+        }()
 
     lazy var localDataSource: LocalDataSource = {
         LocalDataSource(realmManager: realmManager)

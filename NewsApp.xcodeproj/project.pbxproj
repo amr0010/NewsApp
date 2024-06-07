@@ -50,6 +50,9 @@
 		CFC550C92C12FC0600F08E21 /* CategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550C82C12FC0600F08E21 /* CategoryEntity.swift */; };
 		CFC550CB2C12FC1700F08E21 /* EntityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550CA2C12FC1700F08E21 /* EntityProtocol.swift */; };
 		CFC550CD2C12FC4C00F08E21 /* MapperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550CC2C12FC4C00F08E21 /* MapperProtocol.swift */; };
+		CFC550CF2C130AAC00F08E21 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550CE2C130AAC00F08E21 /* OnboardingViewModel.swift */; };
+		CFC550D42C130E1F00F08E21 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CFC550D32C130E1F00F08E21 /* RealmSwift */; };
+		CFC550D62C13400600F08E21 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D52C13400600F08E21 /* RealmManagerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,8 @@
 		CFC550C82C12FC0600F08E21 /* CategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEntity.swift; sourceTree = "<group>"; };
 		CFC550CA2C12FC1700F08E21 /* EntityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProtocol.swift; sourceTree = "<group>"; };
 		CFC550CC2C12FC4C00F08E21 /* MapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperProtocol.swift; sourceTree = "<group>"; };
+		CFC550CE2C130AAC00F08E21 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		CFC550D52C13400600F08E21 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC550D42C130E1F00F08E21 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +393,7 @@
 			children = (
 				CFC550922C1106B500F08E21 /* CategorySelectionViewModel.swift */,
 				CFC550942C1106C200F08E21 /* CountrySelectionViewModel.swift */,
+				CFC550CE2C130AAC00F08E21 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -395,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				CFC550A12C1110DD00F08E21 /* RealmManager.swift */,
+				CFC550D52C13400600F08E21 /* RealmManagerProtocol.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -460,6 +468,9 @@
 			dependencies = (
 			);
 			name = NewsApp;
+			packageProductDependencies = (
+				CFC550D32C130E1F00F08E21 /* RealmSwift */,
+			);
 			productName = NewsApp;
 			productReference = CFC5503B2C10F13800F08E21 /* NewsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -533,6 +544,9 @@
 				ar,
 			);
 			mainGroup = CFC550322C10F13800F08E21;
+			packageReferences = (
+				CFC550D02C130E1F00F08E21 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = CFC5503C2C10F13800F08E21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -579,6 +593,7 @@
 				CFC550AF2C12089C00F08E21 /* BouncyButton.swift in Sources */,
 				CFC550B82C12E9B500F08E21 /* Endpoint.swift in Sources */,
 				CFC550C22C12FA0700F08E21 /* SourceDTO.swift in Sources */,
+				CFC550D62C13400600F08E21 /* RealmManagerProtocol.swift in Sources */,
 				CFC550932C1106B500F08E21 /* CategorySelectionViewModel.swift in Sources */,
 				CFC550972C110FD100F08E21 /* FetchCountriesUseCase.swift in Sources */,
 				CFC550412C10F13800F08E21 /* ContentView.swift in Sources */,
@@ -607,6 +622,7 @@
 				CFC5509B2C11105900F08E21 /* CategoriesRepository.swift in Sources */,
 				CFC550C02C12F9E800F08E21 /* SourcesResponse.swift in Sources */,
 				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
+				CFC550CF2C130AAC00F08E21 /* OnboardingViewModel.swift in Sources */,
 				CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */,
 				CFC550A42C1111C300F08E21 /* CountriesRepository.swift in Sources */,
 				CFC550912C11069700F08E21 /* CategorySelectionView.swift in Sources */,
@@ -956,6 +972,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CFC550D02C130E1F00F08E21 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CFC550D32C130E1F00F08E21 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFC550D02C130E1F00F08E21 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CFC550332C10F13800F08E21 /* Project object */;
 }
