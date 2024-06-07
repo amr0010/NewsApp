@@ -10,7 +10,6 @@ import SwiftUI
 struct CategorySelectionView: View {
     @ObservedObject var viewModel: CategorySelectionViewModel
     var onBack: () -> Void
-
     var body: some View {
         VStack {
             HStack {
@@ -27,12 +26,15 @@ struct CategorySelectionView: View {
             }
             Text("Select Categories")
                 .font(.largeTitle)
-            List(viewModel.categories, id: \.self) { category in
+                .fontWeight(.bold)
+                .padding()
+            List(viewModel.categories, id: \.id) { category in
                 HStack {
-                    Text(category.capitalized)
+                    Text(category.name.capitalized)
                     Spacer()
-                    if viewModel.selectedCategories.contains(category) {
-                        Image(systemName: "checkmark")
+                    if viewModel.selectedCategories.contains(where: { $0.id == category.id }) {
+                        Image(systemName: "checkmark.circle.fill")
+                            .foregroundColor(.blue)
                     }
                 }
                 .onTapGesture {
@@ -42,11 +44,12 @@ struct CategorySelectionView: View {
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)
+                    .padding()
             }
         }
         .padding()
         .onAppear {
-            
+            viewModel.loadCategories()
         }
     }
 }

@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 class CategorySelectionViewModel: ObservableObject {
-    @Published var categories: [String] = []
-    @Published var selectedCategories: [String] = []
+    @Published var categories: [CategoryEntity] = []
+    @Published var selectedCategories: [CategoryEntity] = []
     @Published var errorMessage: String?
 
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
@@ -20,8 +20,8 @@ class CategorySelectionViewModel: ObservableObject {
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
     }
 
-    func loadCategories(apiKey: String) {
-        fetchCategoriesUseCase.execute(apiKey: apiKey)
+    func loadCategories() {
+        fetchCategoriesUseCase.execute()
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
@@ -32,13 +32,14 @@ class CategorySelectionViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func selectCategory(_ category: String) {
-        if selectedCategories.contains(category) {
-            selectedCategories.removeAll { $0 == category }
+    func selectCategory(_ category: CategoryEntity) {
+        if selectedCategories.contains(where: { $0.id == category.id }) {
+            selectedCategories.removeAll { $0.id == category.id }
         } else {
             selectedCategories.append(category)
         }
     }
 }
+
 
 

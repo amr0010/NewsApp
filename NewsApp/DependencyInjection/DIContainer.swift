@@ -36,8 +36,12 @@ class DIContainer {
         CountriesRepository(countryManager: countryManager)
     }()
     
+    lazy var categoryMapper: CategoryMapper = {
+        CategoryMapper()
+    }()
+    
     lazy var categoriesRepository: CategoriesRepositoryProtocol = {
-        CategoriesRepository(remoteDataSource: remoteDataSource)
+        CategoriesRepository(remoteDataSource: remoteDataSource, mapper: categoryMapper)
     }()
 
     lazy var fetchCountriesUseCase: FetchCountriesUseCaseProtocol = {

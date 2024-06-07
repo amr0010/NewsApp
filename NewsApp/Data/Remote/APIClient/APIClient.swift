@@ -23,9 +23,18 @@ class APIClient: APIClientProtocol {
     }
 
     func fetch<T: Decodable>(endpoint: Endpoint) -> AnyPublisher<T, APIError> {
-        guard let request = endpoint.asURLRequest() else {
+        guard let url = endpoint.url else {
             return Fail(error: APIError.invalidURL).eraseToAnyPublisher()
         }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = endpoint.method.rawValue
+        if let headers = endpoint.headers {
+            for (key, value) in headers {
+                request.setValue(value, forHTTPHeaderField: key)
+            }
+        }
+        request.httpBody = endpoint.body
 
         return session.dataTaskPublisher(for: request)
             .tryMap { data, response in
@@ -47,3 +56,4 @@ class APIClient: APIClientProtocol {
             .eraseToAnyPublisher()
     }
 }
+

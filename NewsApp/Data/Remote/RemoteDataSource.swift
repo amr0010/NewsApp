@@ -10,18 +10,19 @@ import Combine
 
 class RemoteDataSource {
     private let apiClient: APIClientProtocol
-
+    
     init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
     }
-
-    func fetchCategories(apiKey: String) -> AnyPublisher<[String], Error> {
-        //TODO: - use APIClient to get categories
-
-        let categories = ["Category1", "Category2", "Category3"]
-            return Just(categories)
-                .setFailureType(to: Error.self)
-                .eraseToAnyPublisher()
-        
+    
+    func fetchCategories() -> AnyPublisher<SourcesResponseDTO, APIError> {
+        let endpoint = NewsAPIEndpoint(
+            path: Constants.API.sourcesPath,
+            queryItems: [URLQueryItem(name: "apiKey", value: Constants.API.apiKey)]
+        )
+        return apiClient.fetch(endpoint: endpoint)
+            
     }
+    
 }
+

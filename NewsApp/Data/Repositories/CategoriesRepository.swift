@@ -9,18 +9,23 @@ import Foundation
 import Combine
 
 protocol CategoriesRepositoryProtocol {
-    func fetchCategories(apiKey: String) -> AnyPublisher<[String], Error>
+    func fetchCategories() -> AnyPublisher<[CategoryEntity], APIError>
 }
 
 class CategoriesRepository: CategoriesRepositoryProtocol {
     private let remoteDataSource: RemoteDataSource
+    private let mapper: CategoryMapper
 
-    init(remoteDataSource: RemoteDataSource) {
+    init(remoteDataSource: RemoteDataSource, mapper: CategoryMapper) {
         self.remoteDataSource = remoteDataSource
+        self.mapper = mapper
     }
 
-    func fetchCategories(apiKey: String) -> AnyPublisher<[String], Error> {
-        return remoteDataSource.fetchCategories(apiKey: apiKey)
+    func fetchCategories() -> AnyPublisher<[CategoryEntity], APIError> {
+        return remoteDataSource.fetchCategories()
+            .map { response in
+                return self.mapper.mapToEntity(from: response)
+            }
+            .eraseToAnyPublisher()
     }
 }
-

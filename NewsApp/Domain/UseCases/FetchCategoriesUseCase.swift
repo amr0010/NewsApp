@@ -9,17 +9,19 @@ import Foundation
 import Combine
 
 protocol FetchCategoriesUseCaseProtocol {
-    func execute(apiKey: String) -> AnyPublisher<[String], Error>
+    func execute() -> AnyPublisher<[CategoryEntity], Error>
 }
 
 class FetchCategoriesUseCase: FetchCategoriesUseCaseProtocol {
     private let repository: CategoriesRepositoryProtocol
-
+    
     init(repository: CategoriesRepositoryProtocol) {
         self.repository = repository
     }
-
-    func execute(apiKey: String) -> AnyPublisher<[String], Error> {
-        return repository.fetchCategories(apiKey: apiKey)
+    
+    func execute() -> AnyPublisher<[CategoryEntity], Error> {
+        return repository.fetchCategories()
+            .mapError { $0 as Error }
+            .eraseToAnyPublisher()
     }
 }
