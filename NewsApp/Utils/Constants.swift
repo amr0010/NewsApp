@@ -10,6 +10,7 @@ import Foundation
 struct Constants {
     struct API {
         static let apiKey = "51f87dd5c9a84694923fbba55d76f87c"
+        static let newsAPIHost = "newsapi.org"
     }
     
     struct Preferences {

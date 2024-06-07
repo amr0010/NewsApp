@@ -39,6 +39,10 @@
 		CFC550AD2C11195C00F08E21 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550AC2C11195C00F08E21 /* SearchBar.swift */; };
 		CFC550AF2C12089C00F08E21 /* BouncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550AE2C12089C00F08E21 /* BouncyButton.swift */; };
 		CFC550B22C124F3A00F08E21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550B12C124F3A00F08E21 /* Constants.swift */; };
+		CFC550B82C12E9B500F08E21 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550B72C12E9B500F08E21 /* Endpoint.swift */; };
+		CFC550BA2C12E9C400F08E21 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550B92C12E9C400F08E21 /* HTTPMethod.swift */; };
+		CFC550BC2C12E9F000F08E21 /* NewsAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550BB2C12E9F000F08E21 /* NewsAPIEndpoint.swift */; };
+		CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550BD2C12F72900F08E21 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +99,10 @@
 		CFC550AC2C11195C00F08E21 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		CFC550AE2C12089C00F08E21 /* BouncyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyButton.swift; sourceTree = "<group>"; };
 		CFC550B12C124F3A00F08E21 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CFC550B72C12E9B500F08E21 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		CFC550B92C12E9C400F08E21 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		CFC550BB2C12E9F000F08E21 /* NewsAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIEndpoint.swift; sourceTree = "<group>"; };
+		CFC550BD2C12F72900F08E21 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,8 +279,9 @@
 		CFC550752C10FC7000F08E21 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				CFC550B62C12E8F000F08E21 /* Endpoints */,
+				CFC550B32C12E8AF00F08E21 /* APIClient */,
 				CFC5509C2C11108600F08E21 /* RemoteDataSource.swift */,
-				CFC550A72C11127E00F08E21 /* APIClient.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -385,6 +394,25 @@
 				CFC550B12C124F3A00F08E21 /* Constants.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CFC550B32C12E8AF00F08E21 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				CFC550A72C11127E00F08E21 /* APIClient.swift */,
+				CFC550BD2C12F72900F08E21 /* APIError.swift */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		CFC550B62C12E8F000F08E21 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				CFC550B72C12E9B500F08E21 /* Endpoint.swift */,
+				CFC550B92C12E9C400F08E21 /* HTTPMethod.swift */,
+				CFC550BB2C12E9F000F08E21 /* NewsAPIEndpoint.swift */,
+			);
+			path = Endpoints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFC550AF2C12089C00F08E21 /* BouncyButton.swift in Sources */,
+				CFC550B82C12E9B500F08E21 /* Endpoint.swift in Sources */,
 				CFC550932C1106B500F08E21 /* CategorySelectionViewModel.swift in Sources */,
 				CFC550972C110FD100F08E21 /* FetchCountriesUseCase.swift in Sources */,
 				CFC550412C10F13800F08E21 /* ContentView.swift in Sources */,
@@ -529,16 +558,19 @@
 				CFC550B22C124F3A00F08E21 /* Constants.swift in Sources */,
 				CFC550A82C11127E00F08E21 /* APIClient.swift in Sources */,
 				CFC550A62C11121A00F08E21 /* CountryEntity.swift in Sources */,
+				CFC550BC2C12E9F000F08E21 /* NewsAPIEndpoint.swift in Sources */,
 				CFC550952C1106C200F08E21 /* CountrySelectionViewModel.swift in Sources */,
 				CFC5509F2C1110A200F08E21 /* LocalDataSource.swift in Sources */,
 				CFC5507E2C10FE4F00F08E21 /* KeychainManagerProtocol.swift in Sources */,
 				CFC5508D2C11067400F08E21 /* OnboardingView.swift in Sources */,
 				CFC5508F2C11067F00F08E21 /* CountrySelectionView.swift in Sources */,
+				CFC550BA2C12E9C400F08E21 /* HTTPMethod.swift in Sources */,
 				CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */,
 				CFC550A22C1110DD00F08E21 /* RealmManager.swift in Sources */,
 				CFC5509D2C11108600F08E21 /* RemoteDataSource.swift in Sources */,
 				CFC550892C11056700F08E21 /* DIContainer.swift in Sources */,
 				CFC5509B2C11105900F08E21 /* CategoriesRepository.swift in Sources */,
+				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
 				CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */,
 				CFC550A42C1111C300F08E21 /* CountriesRepository.swift in Sources */,
 				CFC550912C11069700F08E21 /* CategorySelectionView.swift in Sources */,

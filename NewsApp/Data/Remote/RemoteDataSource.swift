@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 class RemoteDataSource {
-    private let apiClient: APIClient
+    private let apiClient: APIClientProtocol
 
-    init(apiClient: APIClient) {
+    init(apiClient: APIClientProtocol) {
         self.apiClient = apiClient
     }
 

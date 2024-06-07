@@ -12,7 +12,7 @@ class DIContainer {
 
     private init() {}
 
-    lazy var apiClient: APIClient = {
+    lazy var apiClient: APIClientProtocol = {
         APIClient()
     }()
 
