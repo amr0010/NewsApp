@@ -51,4 +51,8 @@ class DIContainer {
     lazy var fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol = {
         FetchCategoriesUseCase(repository: categoriesRepository)
     }()
+    
+    lazy var onboardingUseCase: OnboardingUseCaseProtocol = {
+            OnboardingUseCase(realmManager: realmManager)
+        }()
 }

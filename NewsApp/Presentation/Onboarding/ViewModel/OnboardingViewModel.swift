@@ -11,7 +11,8 @@ import Foundation
 class OnboardingViewModel: ObservableObject {
     @Published var selectedCountry: CountryEntity?
     @Published var selectedCategories: [CategoryEntity] = []
-    @Published var isNextButtonEnabled: Bool = false
+    @Published var canFinishOnboarding: Bool = false
+    @Published var canProceedToCategories: Bool = false
     @Published var countries: [CountryEntity] = []
     @Published var filteredCountries: [CountryEntity] = []
     @Published var categories: [CategoryEntity] = []
@@ -21,7 +22,7 @@ class OnboardingViewModel: ObservableObject {
             filterCountries()
         }
     }
-
+    
     private let fetchCountriesUseCase: FetchCountriesUseCaseProtocol
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
     private let onboardingUseCase: OnboardingUseCaseProtocol
@@ -36,7 +37,12 @@ class OnboardingViewModel: ObservableObject {
         // Enable the Next button if at least 3 categories are selected
         $selectedCategories
             .map { $0.count >= 3 }
-            .assign(to: &$isNextButtonEnabled)
+            .assign(to: &$canFinishOnboarding)
+        
+        // Enable the Next button in country selection if a country is selected
+        $selectedCountry
+            .map { $0 != nil }
+            .assign(to: &$canProceedToCategories)
     }
 
     // Load countries using the fetchCountriesUseCase
@@ -46,6 +52,7 @@ class OnboardingViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
+                    print("Error loading countries: \(error.localizedDescription)")
                 }
             }, receiveValue: { countries in
                 self.countries = countries
@@ -61,9 +68,11 @@ class OnboardingViewModel: ObservableObject {
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
+                    print("Error loading categories: \(error.localizedDescription)")
                 }
             }, receiveValue: { categories in
                 self.categories = categories
+                print("Categories loaded: \(categories)")
             })
             .store(in: &cancellables)
     }
@@ -102,7 +111,7 @@ class OnboardingViewModel: ObservableObject {
                     self.errorMessage = error.localizedDescription
                 }
             }, receiveValue: {
-                self.successMessage = "Onboarding data saved successfully!"
+                print("success")
             })
             .store(in: &cancellables)
     }

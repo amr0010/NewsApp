@@ -14,12 +14,10 @@ class OnboardingCoordinator: ObservableObject {
     let didFinishOnboarding = PassthroughSubject<Void, Never>()
     
     init(diContainer: DIContainer) {
-//        self.countrySelectionViewModel = CountrySelectionViewModel(fetchCountriesUseCase: diContainer.fetchCountriesUseCase)
-//        self.categorySelectionViewModel = CategorySelectionViewModel(fetchCategoriesUseCase: diContainer.fetchCategoriesUseCase)
         self.onboardingViewModel = OnboardingViewModel(
             fetchCountriesUseCase: diContainer.fetchCountriesUseCase,
             fetchCategoriesUseCase: diContainer.fetchCategoriesUseCase,
-            realmManager: diContainer.realmManager)
+            onboardingUseCase: diContainer.onboardingUseCase)
     }
     
     func finishOnboarding() {

@@ -24,7 +24,11 @@ class CategoriesRepository: CategoriesRepositoryProtocol {
     func fetchCategories() -> AnyPublisher<[CategoryEntity], APIError> {
         return remoteDataSource.fetchCategories()
             .map { response in
-                return self.mapper.mapToEntity(from: response)
+                let entities = self.mapper.mapToEntity(from: response)
+                let uniqueCategories = Array(Set(entities.map { $0.name })).map { name in
+                    entities.first { $0.name == name }!
+                }
+                return uniqueCategories
             }
             .eraseToAnyPublisher()
     }

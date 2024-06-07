@@ -55,6 +55,7 @@
 		CFC550D62C13400600F08E21 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D52C13400600F08E21 /* RealmManagerProtocol.swift */; };
 		CFC550D82C13414800F08E21 /* OnboardingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D72C13414800F08E21 /* OnboardingEntity.swift */; };
 		CFC550DA2C13439800F08E21 /* OnboardingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */; };
+		CFC550DC2C134D3B00F08E21 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550DB2C134D3B00F08E21 /* AppButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		CFC550D52C13400600F08E21 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
 		CFC550D72C13414800F08E21 /* OnboardingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEntity.swift; sourceTree = "<group>"; };
 		CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUseCase.swift; sourceTree = "<group>"; };
+		CFC550DB2C134D3B00F08E21 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +420,7 @@
 			children = (
 				CFC550AC2C11195C00F08E21 /* SearchBar.swift */,
 				CFC550AE2C12089C00F08E21 /* BouncyButton.swift */,
+				CFC550DB2C134D3B00F08E21 /* AppButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				CFC5509B2C11105900F08E21 /* CategoriesRepository.swift in Sources */,
 				CFC550C02C12F9E800F08E21 /* SourcesResponse.swift in Sources */,
 				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
+				CFC550DC2C134D3B00F08E21 /* AppButton.swift in Sources */,
 				CFC550CF2C130AAC00F08E21 /* OnboardingViewModel.swift in Sources */,
 				CFC550D82C13414800F08E21 /* OnboardingEntity.swift in Sources */,
 				CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */,

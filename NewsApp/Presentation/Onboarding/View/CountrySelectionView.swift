@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountrySelectionView: View {
-    @ObservedObject var viewModel: OnboardingViewModel
+    @StateObject var viewModel: OnboardingViewModel
 
     var body: some View {
         VStack {
@@ -35,7 +35,6 @@ struct CountrySelectionView: View {
                         .background(Color.white)
                         .cornerRadius(10)
                         .shadow(radius: 5)
-                        
                         .padding()
                         .onTapGesture {
                             viewModel.selectCountry(country)
@@ -51,6 +50,10 @@ struct CountrySelectionView: View {
         }
         .padding()
         .background(Color.cyan)
+        .onAppear {
+            viewModel.loadCountries()
+        }
+        
     }
 }
 

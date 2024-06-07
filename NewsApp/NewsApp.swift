@@ -15,7 +15,7 @@ struct NewsApp: App {
         WindowGroup {
             Group {
                 if let onboardingCoordinator = appCoordinator.onboardingCoordinator {
-                    OnboardingView(coordinator: onboardingCoordinator)
+                    OnboardingView(coordinator: onboardingCoordinator, viewModel: onboardingCoordinator.onboardingViewModel)
                         .environmentObject(appCoordinator)
                 } else if let headlinesCoordinator = appCoordinator.headlinesCoordinator {
                         ContentView()

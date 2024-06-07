@@ -8,13 +8,14 @@ import SwiftUI
 
 struct OnboardingView: View {
     @ObservedObject var coordinator: OnboardingCoordinator
+    @StateObject var viewModel: OnboardingViewModel
     @State private var showCategorySelection = false
 
     var body: some View {
         VStack {
             if showCategorySelection {
                 CategorySelectionView(
-                    viewModel: coordinator.onboardingViewModel,
+                    viewModel: viewModel,
                     onBack: {
                         withAnimation {
                             showCategorySelection = false
@@ -23,33 +24,19 @@ struct OnboardingView: View {
                 )
                 .transition(.move(edge: .bottom))
                 .animation(.easeInOut)
-                Button(action: {
+                AppButton(title: "Finish", isEnabled: viewModel.canFinishOnboarding) {
                     coordinator.finishOnboarding()
-                }) {
-                    Text("Finish Onboarding")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
+                          }
                 .padding()
                 .transition(.move(edge: .top))
                 .animation(.easeInOut)
             } else {
-                CountrySelectionView(viewModel: coordinator.onboardingViewModel)
-                Button(action: {
-                    withAnimation {
-                        showCategorySelection = true
-                    }
-                }) {
-                    Text("Next")
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
+                CountrySelectionView(viewModel: viewModel)
+                AppButton(title: "Next", isEnabled: viewModel.canProceedToCategories) {
+                              withAnimation {
+                                  showCategorySelection = true
+                              }
+                          }
                 .padding()
             }
         }
