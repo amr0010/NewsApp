@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CountrySelectionView: View {
-    @ObservedObject var viewModel: CountrySelectionViewModel
+    @ObservedObject var viewModel: OnboardingViewModel
 
     var body: some View {
         VStack {

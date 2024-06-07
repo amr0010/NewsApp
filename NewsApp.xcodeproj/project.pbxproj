@@ -53,6 +53,8 @@
 		CFC550CF2C130AAC00F08E21 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550CE2C130AAC00F08E21 /* OnboardingViewModel.swift */; };
 		CFC550D42C130E1F00F08E21 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CFC550D32C130E1F00F08E21 /* RealmSwift */; };
 		CFC550D62C13400600F08E21 /* RealmManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D52C13400600F08E21 /* RealmManagerProtocol.swift */; };
+		CFC550D82C13414800F08E21 /* OnboardingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D72C13414800F08E21 /* OnboardingEntity.swift */; };
+		CFC550DA2C13439800F08E21 /* OnboardingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,8 @@
 		CFC550CC2C12FC4C00F08E21 /* MapperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapperProtocol.swift; sourceTree = "<group>"; };
 		CFC550CE2C130AAC00F08E21 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		CFC550D52C13400600F08E21 /* RealmManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManagerProtocol.swift; sourceTree = "<group>"; };
+		CFC550D72C13414800F08E21 /* OnboardingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEntity.swift; sourceTree = "<group>"; };
+		CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +320,7 @@
 				CFC550CA2C12FC1700F08E21 /* EntityProtocol.swift */,
 				CFC550A52C11121A00F08E21 /* CountryEntity.swift */,
 				CFC550C82C12FC0600F08E21 /* CategoryEntity.swift */,
+				CFC550D72C13414800F08E21 /* OnboardingEntity.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 			children = (
 				CFC550962C110FD100F08E21 /* FetchCountriesUseCase.swift */,
 				CFC550982C110FE600F08E21 /* FetchCategoriesUseCase.swift */,
+				CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -614,6 +620,7 @@
 				CFC5508F2C11067F00F08E21 /* CountrySelectionView.swift in Sources */,
 				CFC550BA2C12E9C400F08E21 /* HTTPMethod.swift in Sources */,
 				CFC550C52C12FA5500F08E21 /* CategoryMapper.swift in Sources */,
+				CFC550DA2C13439800F08E21 /* OnboardingUseCase.swift in Sources */,
 				CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */,
 				CFC550A22C1110DD00F08E21 /* RealmManager.swift in Sources */,
 				CFC5509D2C11108600F08E21 /* RemoteDataSource.swift in Sources */,
@@ -623,6 +630,7 @@
 				CFC550C02C12F9E800F08E21 /* SourcesResponse.swift in Sources */,
 				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
 				CFC550CF2C130AAC00F08E21 /* OnboardingViewModel.swift in Sources */,
+				CFC550D82C13414800F08E21 /* OnboardingEntity.swift in Sources */,
 				CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */,
 				CFC550A42C1111C300F08E21 /* CountriesRepository.swift in Sources */,
 				CFC550912C11069700F08E21 /* CategorySelectionView.swift in Sources */,

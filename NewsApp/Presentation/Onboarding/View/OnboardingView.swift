@@ -14,7 +14,7 @@ struct OnboardingView: View {
         VStack {
             if showCategorySelection {
                 CategorySelectionView(
-                    viewModel: coordinator.categorySelectionViewModel,
+                    viewModel: coordinator.onboardingViewModel,
                     onBack: {
                         withAnimation {
                             showCategorySelection = false
@@ -37,7 +37,7 @@ struct OnboardingView: View {
                 .transition(.move(edge: .top))
                 .animation(.easeInOut)
             } else {
-                CountrySelectionView(viewModel: coordinator.countrySelectionViewModel)
+                CountrySelectionView(viewModel: coordinator.onboardingViewModel)
                 Button(action: {
                     withAnimation {
                         showCategorySelection = true

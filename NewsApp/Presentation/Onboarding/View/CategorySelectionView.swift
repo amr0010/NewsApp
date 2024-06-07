@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategorySelectionView: View {
-    @ObservedObject var viewModel: CategorySelectionViewModel
+    @ObservedObject var viewModel: OnboardingViewModel
     var onBack: () -> Void
     var body: some View {
         VStack {

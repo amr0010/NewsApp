@@ -12,6 +12,8 @@ class CountrySelectionViewModel: ObservableObject {
     @Published var countries: [CountryEntity] = []
     @Published var filteredCountries: [CountryEntity] = []
     @Published var selectedCountry: CountryEntity?
+    @Published var categories: [CategoryEntity] = []
+    @Published var selectedCategories: [CategoryEntity] = []
     @Published var searchText: String = "" {
         didSet {
             filterCountries()
