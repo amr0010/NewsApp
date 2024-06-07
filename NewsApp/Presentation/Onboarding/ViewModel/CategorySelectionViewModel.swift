@@ -22,6 +22,7 @@ class CategorySelectionViewModel: ObservableObject {
 
     func loadCategories() {
         fetchCategoriesUseCase.execute()
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
