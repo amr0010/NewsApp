@@ -8,7 +8,8 @@
 import Foundation
 
 struct CountryEntity: Identifiable {
-    let id: UUID
-    let name: String
+    let id = UUID()
     let code: String
+    let name: String
+    let flag: String
 }

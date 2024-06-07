@@ -9,9 +9,9 @@ import Foundation
 import Combine
 
 class CountrySelectionViewModel: ObservableObject {
-    @Published var countries: [Country] = []
-    @Published var filteredCountries: [Country] = []
-    @Published var selectedCountry: Country?
+    @Published var countries: [CountryEntity] = []
+    @Published var filteredCountries: [CountryEntity] = []
+    @Published var selectedCountry: CountryEntity?
     @Published var searchText: String = "" {
         didSet {
             filterCountries()
@@ -40,7 +40,7 @@ class CountrySelectionViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func selectCountry(_ country: Country) {
+    func selectCountry(_ country: CountryEntity) {
         selectedCountry = country
     }
 

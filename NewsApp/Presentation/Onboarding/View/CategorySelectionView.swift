@@ -46,7 +46,7 @@ struct CategorySelectionView: View {
         }
         .padding()
         .onAppear {
-            viewModel.loadCategories(apiKey: "YOUR_API_KEY")
+            
         }
     }
 }

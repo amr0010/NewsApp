@@ -17,7 +17,7 @@ class AppCoordinator: ObservableObject {
     
     init(diContainer: DIContainer) {
         self.diContainer = diContainer
-        if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
+        if !UserDefaults.standard.bool(forKey: Constants.Preferences.onboardingCompletedKey) {
             startOnboarding()
         } else {
             startHeadlines()
@@ -25,7 +25,7 @@ class AppCoordinator: ObservableObject {
     }
     
     func start() {
-        if !UserDefaults.standard.bool(forKey: "hasCompletedOnboarding") {
+        if !UserDefaults.standard.bool(forKey: Constants.Preferences.onboardingCompletedKey) {
             startOnboarding()
         } else {
             startHeadlines()
@@ -45,7 +45,7 @@ class AppCoordinator: ObservableObject {
     }
     
     func finishOnboarding() {
-        UserDefaults.standard.set(true, forKey: "hasCompletedOnboarding")
+        UserDefaults.standard.set(true, forKey: Constants.Preferences.onboardingCompletedKey)
         onboardingCoordinator = nil
         startHeadlines()
     }

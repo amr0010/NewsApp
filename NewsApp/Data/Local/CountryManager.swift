@@ -14,26 +14,19 @@
 
 import Foundation
 
-struct Country: Identifiable {
-    let id = UUID()
-    let code: String
-    let name: String
-    let flag: String
-}
-
 class CountryManager {
     static let shared = CountryManager()
 
     private init() {}
 
-    func getAllCountries() -> [Country] {
+    func getAllCountries() -> [CountryEntity] {
         /// THE API Doesn't have an endpoint to get all supported countries so we are using the countries in the Locale instead
-        var countries = [Country]()
+        var countries = [CountryEntity]()
         let locale = Locale.current
         for code in Locale.isoRegionCodes {
             if let name = locale.localizedString(forRegionCode: code) {
                 let flag = self.flag(from: code)
-                let country = Country(code: code, name: name, flag: flag)
+                let country = CountryEntity(code: code, name: name, flag: flag)
                 countries.append(country)
             }
         }

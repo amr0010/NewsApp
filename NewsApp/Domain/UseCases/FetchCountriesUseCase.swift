@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol FetchCountriesUseCaseProtocol {
-    func execute() -> AnyPublisher<[Country], Never>
+    func execute() -> AnyPublisher<[CountryEntity], Never>
 }
 
 class FetchCountriesUseCase: FetchCountriesUseCaseProtocol {
@@ -19,7 +19,7 @@ class FetchCountriesUseCase: FetchCountriesUseCaseProtocol {
         self.repository = repository
     }
 
-    func execute() -> AnyPublisher<[Country], Never> {
+    func execute() -> AnyPublisher<[CountryEntity], Never> {
         return repository.fetchCountries()
     }
 }

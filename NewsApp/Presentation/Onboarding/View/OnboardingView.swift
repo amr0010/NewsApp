@@ -21,7 +21,7 @@ struct OnboardingView: View {
                         }
                     }
                 )
-                .transition(.move(edge: .top))
+                .transition(.move(edge: .bottom))
                 .animation(.easeInOut)
                 Button(action: {
                     coordinator.finishOnboarding()
@@ -55,6 +55,5 @@ struct OnboardingView: View {
         }
         .padding()
         .background(Color.cyan)
-        .edgesIgnoringSafeArea(.all)
     }
 }

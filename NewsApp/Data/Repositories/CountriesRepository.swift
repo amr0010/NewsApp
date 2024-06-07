@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol CountriesRepositoryProtocol {
-    func fetchCountries() -> AnyPublisher<[Country], Never>
+    func fetchCountries() -> AnyPublisher<[CountryEntity], Never>
 }
 
 class CountriesRepository: CountriesRepositoryProtocol {
@@ -20,7 +20,7 @@ class CountriesRepository: CountriesRepositoryProtocol {
         self.countryManager = countryManager
     }
     
-    func fetchCountries() -> AnyPublisher<[Country], Never> {
+    func fetchCountries() -> AnyPublisher<[CountryEntity], Never> {
         let countries = countryManager.getAllCountries()
         return Just(countries).eraseToAnyPublisher()
     }

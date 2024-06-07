@@ -37,6 +37,8 @@
 		CFC550A82C11127E00F08E21 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550A72C11127E00F08E21 /* APIClient.swift */; };
 		CFC550AA2C1117A000F08E21 /* CountryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550A92C1117A000F08E21 /* CountryManager.swift */; };
 		CFC550AD2C11195C00F08E21 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550AC2C11195C00F08E21 /* SearchBar.swift */; };
+		CFC550AF2C12089C00F08E21 /* BouncyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550AE2C12089C00F08E21 /* BouncyButton.swift */; };
+		CFC550B22C124F3A00F08E21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550B12C124F3A00F08E21 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		CFC550A72C11127E00F08E21 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CFC550A92C1117A000F08E21 /* CountryManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryManager.swift; sourceTree = "<group>"; };
 		CFC550AC2C11195C00F08E21 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		CFC550AE2C12089C00F08E21 /* BouncyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyButton.swift; sourceTree = "<group>"; };
+		CFC550B12C124F3A00F08E21 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 		CFC5503D2C10F13800F08E21 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				CFC550B02C124F2E00F08E21 /* Utils */,
 				CFC5506D2C10FB2000F08E21 /* Resources */,
 				CFC5506C2C10FB1100F08E21 /* DependencyInjection */,
 				CFC5506B2C10FB0200F08E21 /* Presentation */,
@@ -369,8 +374,17 @@
 			isa = PBXGroup;
 			children = (
 				CFC550AC2C11195C00F08E21 /* SearchBar.swift */,
+				CFC550AE2C12089C00F08E21 /* BouncyButton.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		CFC550B02C124F2E00F08E21 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CFC550B12C124F3A00F08E21 /* Constants.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,12 +519,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC550AF2C12089C00F08E21 /* BouncyButton.swift in Sources */,
 				CFC550932C1106B500F08E21 /* CategorySelectionViewModel.swift in Sources */,
 				CFC550972C110FD100F08E21 /* FetchCountriesUseCase.swift in Sources */,
 				CFC550412C10F13800F08E21 /* ContentView.swift in Sources */,
 				CFC550992C110FE600F08E21 /* FetchCategoriesUseCase.swift in Sources */,
 				CFC550852C1100C300F08E21 /* OnboardingCoordinator.swift in Sources */,
 				CFC550AD2C11195C00F08E21 /* SearchBar.swift in Sources */,
+				CFC550B22C124F3A00F08E21 /* Constants.swift in Sources */,
 				CFC550A82C11127E00F08E21 /* APIClient.swift in Sources */,
 				CFC550A62C11121A00F08E21 /* CountryEntity.swift in Sources */,
 				CFC550952C1106C200F08E21 /* CountrySelectionViewModel.swift in Sources */,
