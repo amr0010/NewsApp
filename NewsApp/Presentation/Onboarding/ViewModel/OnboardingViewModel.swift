@@ -23,6 +23,7 @@ class OnboardingViewModel: ObservableObject {
         }
     }
     
+    let onboardingCompleted = PassthroughSubject<Void, Never>()
     private let fetchCountriesUseCase: FetchCountriesUseCaseProtocol
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
     private let onboardingUseCase: OnboardingUseCaseProtocol
@@ -99,9 +100,13 @@ class OnboardingViewModel: ObservableObject {
     func selectCountry(_ country: CountryEntity) {
         selectedCountry = country
     }
+    
+    func finishOnboarding() {
+        saveOnboardingData()
+    }
 
     // Save onboarding data using the onboardingUseCase
-    func saveOnboardingData() {
+    private func saveOnboardingData() {
         guard let selectedCountry = selectedCountry else { return }
 
         onboardingUseCase.saveOnboardingData(selectedCountry: selectedCountry, selectedCategories: selectedCategories)
@@ -112,6 +117,7 @@ class OnboardingViewModel: ObservableObject {
                 }
             }, receiveValue: {
                 print("success")
+                self.onboardingCompleted.send()
             })
             .store(in: &cancellables)
     }

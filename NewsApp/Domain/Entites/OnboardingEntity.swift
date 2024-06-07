@@ -8,7 +8,7 @@
 import RealmSwift
 import Foundation
 
-class OnboardingData: Object, EntityProtocol {
+class OnboardingEntity: Object, EntityProtocol {
     @objc dynamic var id: String = UUID().uuidString
     @objc dynamic var selectedCountry: String = ""
     let selectedCategories = List<String>()

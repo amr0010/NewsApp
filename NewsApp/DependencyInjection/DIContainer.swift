@@ -40,8 +40,16 @@ class DIContainer {
         CategoryMapper()
     }()
     
+    lazy var articleMapper: ArticleMapper = {
+        ArticleMapper()
+    }()
+    
     lazy var categoriesRepository: CategoriesRepositoryProtocol = {
         CategoriesRepository(remoteDataSource: remoteDataSource, mapper: categoryMapper)
+    }()
+    
+    lazy var articleRepository: ArticlesRepositoryProtocol = {
+        ArticlesRepository(remoteDataSource: remoteDataSource, mapper: articleMapper)
     }()
 
     lazy var fetchCountriesUseCase: FetchCountriesUseCaseProtocol = {
@@ -55,4 +63,8 @@ class DIContainer {
     lazy var onboardingUseCase: OnboardingUseCaseProtocol = {
             OnboardingUseCase(realmManager: realmManager)
         }()
+    
+    lazy var fetchHeadlinesUseCase: FetchHeadlinesUseCase = {
+        FetchHeadlinesUseCase(repository: articleRepository)
+    }()
 }

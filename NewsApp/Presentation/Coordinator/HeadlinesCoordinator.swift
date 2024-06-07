@@ -8,5 +8,9 @@ import SwiftUI
 import Combine
 
 class HeadlinesCoordinator: ObservableObject {
-    
+    @Published var headlinesViewModel: HeadlinesViewModel
+
+    init(headlinesViewModel: HeadlinesViewModel) {
+        self.headlinesViewModel = headlinesViewModel
+    }
 }

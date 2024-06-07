@@ -24,8 +24,6 @@
 		CFC5508D2C11067400F08E21 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5508C2C11067400F08E21 /* OnboardingView.swift */; };
 		CFC5508F2C11067F00F08E21 /* CountrySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5508E2C11067F00F08E21 /* CountrySelectionView.swift */; };
 		CFC550912C11069700F08E21 /* CategorySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550902C11069700F08E21 /* CategorySelectionView.swift */; };
-		CFC550932C1106B500F08E21 /* CategorySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550922C1106B500F08E21 /* CategorySelectionViewModel.swift */; };
-		CFC550952C1106C200F08E21 /* CountrySelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550942C1106C200F08E21 /* CountrySelectionViewModel.swift */; };
 		CFC550972C110FD100F08E21 /* FetchCountriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550962C110FD100F08E21 /* FetchCountriesUseCase.swift */; };
 		CFC550992C110FE600F08E21 /* FetchCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550982C110FE600F08E21 /* FetchCategoriesUseCase.swift */; };
 		CFC5509B2C11105900F08E21 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5509A2C11105900F08E21 /* CategoriesRepository.swift */; };
@@ -56,6 +54,18 @@
 		CFC550D82C13414800F08E21 /* OnboardingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D72C13414800F08E21 /* OnboardingEntity.swift */; };
 		CFC550DA2C13439800F08E21 /* OnboardingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */; };
 		CFC550DC2C134D3B00F08E21 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550DB2C134D3B00F08E21 /* AppButton.swift */; };
+		CFC550DE2C135BAE00F08E21 /* ArticlesResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550DD2C135BAE00F08E21 /* ArticlesResponseDTO.swift */; };
+		CFC550E02C135BCB00F08E21 /* ArticleDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550DF2C135BCB00F08E21 /* ArticleDTO.swift */; };
+		CFC550E22C135BFC00F08E21 /* ArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550E12C135BFC00F08E21 /* ArticleEntity.swift */; };
+		CFC550E42C135C1B00F08E21 /* FetchHeadlinesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550E32C135C1B00F08E21 /* FetchHeadlinesUseCase.swift */; };
+		CFC550E62C135C3200F08E21 /* ArticlesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550E52C135C3200F08E21 /* ArticlesRepository.swift */; };
+		CFC550E82C135C7600F08E21 /* ArticleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550E72C135C7600F08E21 /* ArticleMapper.swift */; };
+		CFC550EA2C135CC900F08E21 /* ArticlesAPIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550E92C135CC900F08E21 /* ArticlesAPIEndpoint.swift */; };
+		CFC550EE2C135D8300F08E21 /* HeadlinesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550ED2C135D8300F08E21 /* HeadlinesViewModel.swift */; };
+		CFC550F02C135EBA00F08E21 /* HeadlinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550EF2C135EBA00F08E21 /* HeadlinesView.swift */; };
+		CFC550F22C135EE700F08E21 /* HeadlinesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */; };
+		CFC550F42C13762100F08E21 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F32C13762100F08E21 /* ArticleRowView.swift */; };
+		CFC550F62C13763200F08E21 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F52C13763200F08E21 /* ArticleDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +107,6 @@
 		CFC5508C2C11067400F08E21 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		CFC5508E2C11067F00F08E21 /* CountrySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionView.swift; sourceTree = "<group>"; };
 		CFC550902C11069700F08E21 /* CategorySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionView.swift; sourceTree = "<group>"; };
-		CFC550922C1106B500F08E21 /* CategorySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySelectionViewModel.swift; sourceTree = "<group>"; };
-		CFC550942C1106C200F08E21 /* CountrySelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySelectionViewModel.swift; sourceTree = "<group>"; };
 		CFC550962C110FD100F08E21 /* FetchCountriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCountriesUseCase.swift; sourceTree = "<group>"; };
 		CFC550982C110FE600F08E21 /* FetchCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchCategoriesUseCase.swift; sourceTree = "<group>"; };
 		CFC5509A2C11105900F08E21 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
@@ -128,6 +136,18 @@
 		CFC550D72C13414800F08E21 /* OnboardingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingEntity.swift; sourceTree = "<group>"; };
 		CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUseCase.swift; sourceTree = "<group>"; };
 		CFC550DB2C134D3B00F08E21 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
+		CFC550DD2C135BAE00F08E21 /* ArticlesResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponseDTO.swift; sourceTree = "<group>"; };
+		CFC550DF2C135BCB00F08E21 /* ArticleDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDTO.swift; sourceTree = "<group>"; };
+		CFC550E12C135BFC00F08E21 /* ArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleEntity.swift; sourceTree = "<group>"; };
+		CFC550E32C135C1B00F08E21 /* FetchHeadlinesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchHeadlinesUseCase.swift; sourceTree = "<group>"; };
+		CFC550E52C135C3200F08E21 /* ArticlesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRepository.swift; sourceTree = "<group>"; };
+		CFC550E72C135C7600F08E21 /* ArticleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleMapper.swift; sourceTree = "<group>"; };
+		CFC550E92C135CC900F08E21 /* ArticlesAPIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesAPIEndpoint.swift; sourceTree = "<group>"; };
+		CFC550ED2C135D8300F08E21 /* HeadlinesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesViewModel.swift; sourceTree = "<group>"; };
+		CFC550EF2C135EBA00F08E21 /* HeadlinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesView.swift; sourceTree = "<group>"; };
+		CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesTabView.swift; sourceTree = "<group>"; };
+		CFC550F32C13762100F08E21 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
+		CFC550F52C13763200F08E21 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +301,8 @@
 				CFC550BF2C12F9E800F08E21 /* SourcesResponse.swift */,
 				CFC550C12C12FA0700F08E21 /* SourceDTO.swift */,
 				CFC550C62C12FBE100F08E21 /* DataModelProtocol.swift */,
+				CFC550DD2C135BAE00F08E21 /* ArticlesResponseDTO.swift */,
+				CFC550DF2C135BCB00F08E21 /* ArticleDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +312,7 @@
 			children = (
 				CFC5509A2C11105900F08E21 /* CategoriesRepository.swift */,
 				CFC550A32C1111C300F08E21 /* CountriesRepository.swift */,
+				CFC550E52C135C3200F08E21 /* ArticlesRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -323,6 +346,7 @@
 				CFC550A52C11121A00F08E21 /* CountryEntity.swift */,
 				CFC550C82C12FC0600F08E21 /* CategoryEntity.swift */,
 				CFC550D72C13414800F08E21 /* OnboardingEntity.swift */,
+				CFC550E12C135BFC00F08E21 /* ArticleEntity.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -333,6 +357,7 @@
 				CFC550962C110FD100F08E21 /* FetchCountriesUseCase.swift */,
 				CFC550982C110FE600F08E21 /* FetchCategoriesUseCase.swift */,
 				CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */,
+				CFC550E32C135C1B00F08E21 /* FetchHeadlinesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -349,6 +374,8 @@
 		CFC550792C10FCCE00F08E21 /* Headlines */ = {
 			isa = PBXGroup;
 			children = (
+				CFC550EC2C135D7A00F08E21 /* View */,
+				CFC550EB2C135D7400F08E21 /* ViewModel */,
 			);
 			path = Headlines;
 			sourceTree = "<group>";
@@ -399,8 +426,6 @@
 		CFC5508B2C11065C00F08E21 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				CFC550922C1106B500F08E21 /* CategorySelectionViewModel.swift */,
-				CFC550942C1106C200F08E21 /* CountrySelectionViewModel.swift */,
 				CFC550CE2C130AAC00F08E21 /* OnboardingViewModel.swift */,
 			);
 			path = ViewModel;
@@ -448,6 +473,7 @@
 				CFC550B72C12E9B500F08E21 /* Endpoint.swift */,
 				CFC550B92C12E9C400F08E21 /* HTTPMethod.swift */,
 				CFC550BB2C12E9F000F08E21 /* NewsAPIEndpoint.swift */,
+				CFC550E92C135CC900F08E21 /* ArticlesAPIEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -457,8 +483,28 @@
 			children = (
 				CFC550C42C12FA5500F08E21 /* CategoryMapper.swift */,
 				CFC550CC2C12FC4C00F08E21 /* MapperProtocol.swift */,
+				CFC550E72C135C7600F08E21 /* ArticleMapper.swift */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		CFC550EB2C135D7400F08E21 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFC550ED2C135D8300F08E21 /* HeadlinesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CFC550EC2C135D7A00F08E21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CFC550EF2C135EBA00F08E21 /* HeadlinesView.swift */,
+				CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */,
+				CFC550F32C13762100F08E21 /* ArticleRowView.swift */,
+				CFC550F52C13763200F08E21 /* ArticleDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -599,11 +645,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC550F02C135EBA00F08E21 /* HeadlinesView.swift in Sources */,
 				CFC550AF2C12089C00F08E21 /* BouncyButton.swift in Sources */,
 				CFC550B82C12E9B500F08E21 /* Endpoint.swift in Sources */,
 				CFC550C22C12FA0700F08E21 /* SourceDTO.swift in Sources */,
 				CFC550D62C13400600F08E21 /* RealmManagerProtocol.swift in Sources */,
-				CFC550932C1106B500F08E21 /* CategorySelectionViewModel.swift in Sources */,
 				CFC550972C110FD100F08E21 /* FetchCountriesUseCase.swift in Sources */,
 				CFC550412C10F13800F08E21 /* ContentView.swift in Sources */,
 				CFC550992C110FE600F08E21 /* FetchCategoriesUseCase.swift in Sources */,
@@ -616,23 +662,33 @@
 				CFC550CD2C12FC4C00F08E21 /* MapperProtocol.swift in Sources */,
 				CFC550BC2C12E9F000F08E21 /* NewsAPIEndpoint.swift in Sources */,
 				CFC550CB2C12FC1700F08E21 /* EntityProtocol.swift in Sources */,
-				CFC550952C1106C200F08E21 /* CountrySelectionViewModel.swift in Sources */,
 				CFC5509F2C1110A200F08E21 /* LocalDataSource.swift in Sources */,
 				CFC5507E2C10FE4F00F08E21 /* KeychainManagerProtocol.swift in Sources */,
 				CFC5508D2C11067400F08E21 /* OnboardingView.swift in Sources */,
 				CFC5508F2C11067F00F08E21 /* CountrySelectionView.swift in Sources */,
 				CFC550BA2C12E9C400F08E21 /* HTTPMethod.swift in Sources */,
 				CFC550C52C12FA5500F08E21 /* CategoryMapper.swift in Sources */,
+				CFC550E42C135C1B00F08E21 /* FetchHeadlinesUseCase.swift in Sources */,
 				CFC550DA2C13439800F08E21 /* OnboardingUseCase.swift in Sources */,
 				CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */,
+				CFC550E02C135BCB00F08E21 /* ArticleDTO.swift in Sources */,
 				CFC550A22C1110DD00F08E21 /* RealmManager.swift in Sources */,
 				CFC5509D2C11108600F08E21 /* RemoteDataSource.swift in Sources */,
+				CFC550EE2C135D8300F08E21 /* HeadlinesViewModel.swift in Sources */,
+				CFC550DE2C135BAE00F08E21 /* ArticlesResponseDTO.swift in Sources */,
+				CFC550E82C135C7600F08E21 /* ArticleMapper.swift in Sources */,
+				CFC550EA2C135CC900F08E21 /* ArticlesAPIEndpoint.swift in Sources */,
 				CFC550C72C12FBE100F08E21 /* DataModelProtocol.swift in Sources */,
+				CFC550E62C135C3200F08E21 /* ArticlesRepository.swift in Sources */,
 				CFC550892C11056700F08E21 /* DIContainer.swift in Sources */,
 				CFC5509B2C11105900F08E21 /* CategoriesRepository.swift in Sources */,
 				CFC550C02C12F9E800F08E21 /* SourcesResponse.swift in Sources */,
 				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
 				CFC550DC2C134D3B00F08E21 /* AppButton.swift in Sources */,
+				CFC550F62C13763200F08E21 /* ArticleDetailView.swift in Sources */,
+				CFC550F42C13762100F08E21 /* ArticleRowView.swift in Sources */,
+				CFC550F22C135EE700F08E21 /* HeadlinesTabView.swift in Sources */,
+				CFC550E22C135BFC00F08E21 /* ArticleEntity.swift in Sources */,
 				CFC550CF2C130AAC00F08E21 /* OnboardingViewModel.swift in Sources */,
 				CFC550D82C13414800F08E21 /* OnboardingEntity.swift in Sources */,
 				CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */,

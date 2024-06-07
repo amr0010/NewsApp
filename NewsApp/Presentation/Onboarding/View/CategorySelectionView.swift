@@ -29,18 +29,23 @@ struct CategorySelectionView: View {
                 .fontWeight(.bold)
                 .padding()
             List(viewModel.categories, id: \.id) { category in
-                HStack {
-                    Text(category.name.capitalized)
-                    Spacer()
-                    if viewModel.selectedCategories.contains(where: { $0.id == category.id }) {
-                        Image(systemName: "checkmark.circle.fill")
-                            .foregroundColor(.blue)
-                    }
-                }
-                .onTapGesture {
+                Button(action: {
                     viewModel.selectCategory(category)
+                }) {
+                    HStack {
+                        Text(category.name.capitalized)
+                        Spacer()
+                        if viewModel.selectedCategories.contains(where: { $0.id == category.id }) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .foregroundColor(.blue)
+                        }
+                    }
+                    .contentShape(Rectangle())
                 }
+                .buttonStyle(PlainButtonStyle())
             }
+            
+
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
                     .foregroundColor(.red)

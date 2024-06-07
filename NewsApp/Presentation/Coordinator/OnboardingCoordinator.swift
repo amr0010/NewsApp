@@ -12,15 +12,23 @@ class OnboardingCoordinator: ObservableObject {
     @Published var onboardingViewModel: OnboardingViewModel
     
     let didFinishOnboarding = PassthroughSubject<Void, Never>()
-    
-    init(diContainer: DIContainer) {
-        self.onboardingViewModel = OnboardingViewModel(
-            fetchCountriesUseCase: diContainer.fetchCountriesUseCase,
-            fetchCategoriesUseCase: diContainer.fetchCategoriesUseCase,
-            onboardingUseCase: diContainer.onboardingUseCase)
+    private var cancellables = Set<AnyCancellable>()
+
+    init(viewModel: OnboardingViewModel) {
+        self.onboardingViewModel = viewModel
+        setupBindings()
     }
     
     func finishOnboarding() {
         didFinishOnboarding.send()
     }
+    
+    private func setupBindings() {
+           onboardingViewModel.onboardingCompleted
+               .sink { [weak self] in
+                   print("Onboarding completed signal received")
+                   self?.didFinishOnboarding.send()
+               }
+               .store(in: &cancellables)
+       }
 }

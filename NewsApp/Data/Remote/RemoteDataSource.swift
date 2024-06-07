@@ -24,5 +24,17 @@ class RemoteDataSource {
             
     }
     
+    func fetchHeadlines(onboardingEntity: OnboardingEntity) -> AnyPublisher<ArticlesResponseDTO, APIError> {
+        let endpoint = ArticlesAPIEndpoint(
+            path: Constants.API.articlesPath,
+            queryItems: [
+                URLQueryItem(
+                    name: "country", value: "us"),
+                URLQueryItem(
+                name: "apiKey", value: Constants.API.apiKey)]
+        )
+           return apiClient.fetch(endpoint: endpoint)
+       }
+    
 }
 

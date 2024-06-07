@@ -33,7 +33,12 @@ class AppCoordinator: ObservableObject {
     }
     
     private func startOnboarding() {
-        onboardingCoordinator = OnboardingCoordinator(diContainer: diContainer)
+        let onboardingViewModel = OnboardingViewModel(
+                   fetchCountriesUseCase: diContainer.fetchCountriesUseCase,
+                   fetchCategoriesUseCase: diContainer.fetchCategoriesUseCase,
+                   onboardingUseCase: diContainer.onboardingUseCase
+               )
+        onboardingCoordinator = OnboardingCoordinator(viewModel: onboardingViewModel)
         onboardingCoordinator?.didFinishOnboarding
             .sink(receiveValue: { [weak self] in
                 self?.finishOnboarding()
@@ -42,6 +47,8 @@ class AppCoordinator: ObservableObject {
     }
     
     private func startHeadlines() {
+        let headlinesViewModel = HeadlinesViewModel(fetchHeadlinesUseCase: diContainer.fetchHeadlinesUseCase, onboardingUseCase: diContainer.onboardingUseCase)
+        headlinesCoordinator = HeadlinesCoordinator(headlinesViewModel: headlinesViewModel)
     }
     
     func finishOnboarding() {

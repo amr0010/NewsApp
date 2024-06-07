@@ -12,6 +12,7 @@ struct Constants {
         static let apiKey = "51f87dd5c9a84694923fbba55d76f87c"
         static let newsAPIHost = "newsapi.org"
         static let sourcesPath = "/v2/top-headlines/sources"
+        static let articlesPath = "/v2/top-headlines"
     }
     
     struct Preferences {

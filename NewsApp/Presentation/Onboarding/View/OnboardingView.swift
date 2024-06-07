@@ -25,7 +25,7 @@ struct OnboardingView: View {
                 .transition(.move(edge: .bottom))
                 .animation(.easeInOut)
                 AppButton(title: "Finish", isEnabled: viewModel.canFinishOnboarding) {
-                    coordinator.finishOnboarding()
+                    viewModel.finishOnboarding()
                           }
                 .padding()
                 .transition(.move(edge: .top))

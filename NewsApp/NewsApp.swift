@@ -18,13 +18,12 @@ struct NewsApp: App {
                     OnboardingView(coordinator: onboardingCoordinator, viewModel: onboardingCoordinator.onboardingViewModel)
                         .environmentObject(appCoordinator)
                 } else if let headlinesCoordinator = appCoordinator.headlinesCoordinator {
-                        ContentView()
-                        .environmentObject(appCoordinator)
+                    HeadlinesView(headlinesViewModel: headlinesCoordinator.headlinesViewModel)
                 }
             }
             .onAppear {
                 appCoordinator.start()
             }
-          }
+        }
       }
   }

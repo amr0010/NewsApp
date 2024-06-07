@@ -10,6 +10,8 @@ import Combine
 
 protocol OnboardingUseCaseProtocol {
     func saveOnboardingData(selectedCountry: CountryEntity, selectedCategories: [CategoryEntity]) -> AnyPublisher<Void, Error>
+    func getOnboardingData() -> AnyPublisher<OnboardingEntity?, Error>
+
 }
 
 class OnboardingUseCase: OnboardingUseCaseProtocol {
@@ -21,12 +23,13 @@ class OnboardingUseCase: OnboardingUseCaseProtocol {
 
     func saveOnboardingData(selectedCountry: CountryEntity, selectedCategories: [CategoryEntity]) -> AnyPublisher<Void, Error> {
         return Future<Void, Error> { promise in
-            let onboardingData = OnboardingData()
+            let onboardingData = OnboardingEntity()
             onboardingData.selectedCountry = selectedCountry.name
             onboardingData.selectedCategories.append(objectsIn: selectedCategories.map { $0.name })
 
             do {
                 try self.realmManager.add(onboardingData)
+                UserDefaults.standard.set(true, forKey: Constants.Preferences.onboardingCompletedKey)
                 promise(.success(()))
             } catch {
                 promise(.failure(error))
@@ -34,4 +37,16 @@ class OnboardingUseCase: OnboardingUseCaseProtocol {
         }
         .eraseToAnyPublisher()
     }
+    
+    func getOnboardingData() -> AnyPublisher<OnboardingEntity?, Error> {
+            return Future<OnboardingEntity?, Error> { promise in
+                do {
+                    let data = try self.realmManager.get(OnboardingEntity.self).first
+                    promise(.success(data))
+                } catch {
+                    promise(.failure(error))
+                }
+            }
+            .eraseToAnyPublisher()
+        }
 }
