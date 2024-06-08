@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ArticleRowView: View {
     var article: ArticleEntity
@@ -15,20 +16,16 @@ struct ArticleRowView: View {
     var body: some View {
         HStack(alignment: .top) {
             if let urlToImage = article.urlToImage, let url = URL(string: urlToImage) {
-                AsyncImage(url: url) { image in
-                    image.resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                        .clipped()
-                } placeholder: {
-                    ProgressView()
-                        .frame(width: 100, height: 100)
-                }
-                .onTapGesture {
-                    if let url = URL(string: article.url) {
-                        UIApplication.shared.open(url)
+                KFImage(url)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                    .clipped()
+                    .onTapGesture {
+                        if let url = URL(string: article.url) {
+                            UIApplication.shared.open(url)
+                        }
                     }
-                }
             } else {
                 Color.gray.frame(width: 100, height: 100)
             }
@@ -52,7 +49,6 @@ struct ArticleRowView: View {
                     .foregroundColor(article.isBookmarked ? .blue : .gray)
             }
         }
-        
         .padding(.vertical, 8)
     }
 }

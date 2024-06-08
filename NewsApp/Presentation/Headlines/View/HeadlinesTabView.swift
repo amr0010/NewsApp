@@ -21,13 +21,13 @@ struct HeadlinesTabView: View {
                        ArticleRowView(article: article, onBookmarkTapped: { article in
                            viewModel.toggleBookmark(for: article)
                        })
-
+                       
                    }
                    .navigationTitle("Headlines")
-                   .onAppear {
+                   .onViewDidLoad {
                        viewModel.loadHeadlines()
                    }
                }
            }
-       }
+    }
 }

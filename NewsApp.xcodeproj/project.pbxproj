@@ -65,7 +65,6 @@
 		CFC550F02C135EBA00F08E21 /* HeadlinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550EF2C135EBA00F08E21 /* HeadlinesView.swift */; };
 		CFC550F22C135EE700F08E21 /* HeadlinesTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */; };
 		CFC550F42C13762100F08E21 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F32C13762100F08E21 /* ArticleRowView.swift */; };
-		CFC550F62C13763200F08E21 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F52C13763200F08E21 /* ArticleDetailView.swift */; };
 		CFC550F82C13860F00F08E21 /* SearchArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */; };
 		CFC550FC2C13984700F08E21 /* RealmArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FB2C13984700F08E21 /* RealmArticleEntity.swift */; };
 		CFC550FE2C13987900F08E21 /* SaveArticleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */; };
@@ -73,6 +72,8 @@
 		CFC551022C13A0D100F08E21 /* SaveArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */; };
 		CFC551042C13A11600F08E21 /* SaveArticleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */; };
 		CFC551062C14543F00F08E21 /* DeleteSavedArticleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */; };
+		CFC551082C145BA200F08E21 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */; };
+		CFC5510B2C145CB100F08E21 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CFC5510A2C145CB100F08E21 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,7 +155,6 @@
 		CFC550EF2C135EBA00F08E21 /* HeadlinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesView.swift; sourceTree = "<group>"; };
 		CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesTabView.swift; sourceTree = "<group>"; };
 		CFC550F32C13762100F08E21 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
-		CFC550F52C13763200F08E21 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArticlesUseCase.swift; sourceTree = "<group>"; };
 		CFC550FB2C13984700F08E21 /* RealmArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmArticleEntity.swift; sourceTree = "<group>"; };
 		CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleUseCase.swift; sourceTree = "<group>"; };
@@ -162,6 +162,7 @@
 		CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleViewModel.swift; sourceTree = "<group>"; };
 		CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleTabView.swift; sourceTree = "<group>"; };
 		CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSavedArticleUseCase.swift; sourceTree = "<group>"; };
+		CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC5510B2C145CB100F08E21 /* Kingfisher in Frameworks */,
 				CFC550D42C130E1F00F08E21 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,6 +467,7 @@
 				CFC550AC2C11195C00F08E21 /* SearchBar.swift */,
 				CFC550AE2C12089C00F08E21 /* BouncyButton.swift */,
 				CFC550DB2C134D3B00F08E21 /* AppButton.swift */,
+				CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -522,7 +525,6 @@
 				CFC550EF2C135EBA00F08E21 /* HeadlinesView.swift */,
 				CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */,
 				CFC550F32C13762100F08E21 /* ArticleRowView.swift */,
-				CFC550F52C13763200F08E21 /* ArticleDetailView.swift */,
 				CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */,
 			);
 			path = View;
@@ -546,6 +548,7 @@
 			name = NewsApp;
 			packageProductDependencies = (
 				CFC550D32C130E1F00F08E21 /* RealmSwift */,
+				CFC5510A2C145CB100F08E21 /* Kingfisher */,
 			);
 			productName = NewsApp;
 			productReference = CFC5503B2C10F13800F08E21 /* NewsApp.app */;
@@ -622,6 +625,7 @@
 			mainGroup = CFC550322C10F13800F08E21;
 			packageReferences = (
 				CFC550D02C130E1F00F08E21 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				CFC551092C145CB100F08E21 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = CFC5503C2C10F13800F08E21 /* Products */;
 			projectDirPath = "";
@@ -681,6 +685,7 @@
 				CFC550F82C13860F00F08E21 /* SearchArticlesUseCase.swift in Sources */,
 				CFC550B22C124F3A00F08E21 /* Constants.swift in Sources */,
 				CFC550A82C11127E00F08E21 /* APIClient.swift in Sources */,
+				CFC551082C145BA200F08E21 /* ViewDidLoadModifier.swift in Sources */,
 				CFC550A62C11121A00F08E21 /* CountryEntity.swift in Sources */,
 				CFC550CD2C12FC4C00F08E21 /* MapperProtocol.swift in Sources */,
 				CFC550BC2C12E9F000F08E21 /* NewsAPIEndpoint.swift in Sources */,
@@ -712,7 +717,6 @@
 				CFC551062C14543F00F08E21 /* DeleteSavedArticleUseCase.swift in Sources */,
 				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
 				CFC550DC2C134D3B00F08E21 /* AppButton.swift in Sources */,
-				CFC550F62C13763200F08E21 /* ArticleDetailView.swift in Sources */,
 				CFC550F42C13762100F08E21 /* ArticleRowView.swift in Sources */,
 				CFC550F22C135EE700F08E21 /* HeadlinesTabView.swift in Sources */,
 				CFC550E22C135BFC00F08E21 /* ArticleEntity.swift in Sources */,
@@ -1078,6 +1082,14 @@
 				kind = branch;
 			};
 		};
+		CFC551092C145CB100F08E21 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1085,6 +1097,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CFC550D02C130E1F00F08E21 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		CFC5510A2C145CB100F08E21 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CFC551092C145CB100F08E21 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
