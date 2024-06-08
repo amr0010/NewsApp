@@ -12,6 +12,5 @@ class HeadlinesCoordinator: ObservableObject {
 
     init(headlinesViewModel: HeadlinesViewModel) {
         self.headlinesViewModel = headlinesViewModel
-       // self.savedArticleViewModel = savedArticleViewModel
     }
 }

@@ -14,6 +14,6 @@ struct ArticleDTO: Codable, Identifiable {
     let url: String?
     let urlToImage: String?
     let content: String?
-//    let publishedAt: Date
+    let publishedAt: String?
 //    let source: SourceDTO?
 }

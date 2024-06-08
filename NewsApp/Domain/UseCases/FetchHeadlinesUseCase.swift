@@ -9,17 +9,18 @@ import Foundation
 import Combine
 
 protocol FetchHeadlinesUseCaseProtocol {
-    func execute(onboardingEntity: OnboardingEntity) -> AnyPublisher<[ArticleEntity], APIError>
+    func execute(onboardingEntity: OnboardingEntity, categories: [String]) -> AnyPublisher<[ArticleEntity], APIError>
 }
 
 class FetchHeadlinesUseCase: FetchHeadlinesUseCaseProtocol {
     private let repository: ArticlesRepositoryProtocol
-
+    
     init(repository: ArticlesRepositoryProtocol) {
         self.repository = repository
     }
-
-    func execute(onboardingEntity: OnboardingEntity) -> AnyPublisher<[ArticleEntity], APIError> {
-        return repository.fetchHeadlines(onboardingEntity: onboardingEntity)
+    
+    func execute(onboardingEntity: OnboardingEntity, categories: [String]) -> AnyPublisher<[ArticleEntity], APIError> {
+        return repository.fetchHeadlines(onboardingEntity: onboardingEntity, categories: categories)
     }
+    
 }

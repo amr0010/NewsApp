@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol ArticlesRepositoryProtocol {
-    func fetchHeadlines(onboardingEntity: OnboardingEntity) -> AnyPublisher<[ArticleEntity], APIError>
+    func fetchHeadlines(onboardingEntity: OnboardingEntity, categories: [String]) -> AnyPublisher<[ArticleEntity], APIError>
     func searchArticles(query: String) -> AnyPublisher<[ArticleEntity], APIError>
     func saveArticle(_ article: ArticleEntity) -> AnyPublisher<Void, APIError>
     func fetchSavedArticles() -> AnyPublisher<[ArticleEntity], APIError>
@@ -28,14 +28,22 @@ class ArticlesRepository: ArticlesRepositoryProtocol {
         self.realmManager = realmManager
     }
     
-    func fetchHeadlines(onboardingEntity: OnboardingEntity) -> AnyPublisher<[ArticleEntity], APIError> {
-        
-        return remoteDataSource.fetchHeadlines(onboardingEntity: onboardingEntity)
-            .map { response in
-                self.mapper.mapToEntity(from: response.articles ?? [])
+    func fetchHeadlines(onboardingEntity: OnboardingEntity, categories: [String]) -> AnyPublisher<[ArticleEntity], APIError> {
+            let publishers = categories.map { category in
+                remoteDataSource.fetchHeadlines(onboardingEntity: onboardingEntity, category: category)
+                    .map { response in
+                        self.mapper.mapToEntity(from: response.articles ?? [])
+                    }
+                    .eraseToAnyPublisher()
+            }
+        return Publishers.MergeMany(publishers)
+            .collect()
+            .map { $0.flatMap { $0 } }
+            .map { articles in
+                articles.sorted(by: { $0.publishedAt > $1.publishedAt })
             }
             .eraseToAnyPublisher()
-    }
+        }
     
     func searchArticles(query: String) -> AnyPublisher<[ArticleEntity], APIError> {
         return remoteDataSource.searchArticles(query: query)

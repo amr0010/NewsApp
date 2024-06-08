@@ -10,13 +10,15 @@ import Foundation
 class ArticleMapper {
     func mapToEntity(from models: [ArticleDTO]) -> [ArticleEntity] {
         return models.map { model in
-            ArticleEntity(
+            let publishedDate = Date.from(model.publishedAt ?? "") ?? Date()
+
+            return ArticleEntity(
                 id: model.id,
                 title: model.title ?? "",
                 description: model.description,
                 url: model.url ?? "",
                 urlToImage: model.urlToImage,
-                publishedAt: Date(),
+                publishedAt: publishedDate,
                 content: model.content ?? "",
                 sourceName: ""
             )

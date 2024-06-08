@@ -69,12 +69,13 @@
 		CFC550FC2C13984700F08E21 /* RealmArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FB2C13984700F08E21 /* RealmArticleEntity.swift */; };
 		CFC550FE2C13987900F08E21 /* SaveArticleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */; };
 		CFC551002C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */; };
-		CFC551022C13A0D100F08E21 /* SaveArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */; };
 		CFC551042C13A11600F08E21 /* SaveArticleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */; };
 		CFC551062C14543F00F08E21 /* DeleteSavedArticleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */; };
 		CFC551082C145BA200F08E21 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */; };
 		CFC5510B2C145CB100F08E21 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CFC5510A2C145CB100F08E21 /* Kingfisher */; };
 		CFC5510D2C145F8200F08E21 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5510C2C145F8200F08E21 /* BoxView.swift */; };
+		CFC551102C147AD700F08E21 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5510F2C147AD700F08E21 /* Date+Extensions.swift */; };
+		CFC551122C147C2200F08E21 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551112C147C2200F08E21 /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,11 +161,12 @@
 		CFC550FB2C13984700F08E21 /* RealmArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmArticleEntity.swift; sourceTree = "<group>"; };
 		CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleUseCase.swift; sourceTree = "<group>"; };
 		CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSavedArticlesUseCase.swift; sourceTree = "<group>"; };
-		CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleViewModel.swift; sourceTree = "<group>"; };
 		CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleTabView.swift; sourceTree = "<group>"; };
 		CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSavedArticleUseCase.swift; sourceTree = "<group>"; };
 		CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		CFC5510C2C145F8200F08E21 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		CFC5510F2C147AD700F08E21 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		CFC551112C147C2200F08E21 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -450,6 +452,7 @@
 		CFC550AB2C11194D00F08E21 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CFC5510E2C147AC200F08E21 /* Extensions */,
 				CFC550AC2C11195C00F08E21 /* SearchBar.swift */,
 				CFC550AE2C12089C00F08E21 /* BouncyButton.swift */,
 				CFC550DB2C134D3B00F08E21 /* AppButton.swift */,
@@ -501,7 +504,6 @@
 			isa = PBXGroup;
 			children = (
 				CFC550ED2C135D8300F08E21 /* HeadlinesViewModel.swift */,
-				CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -515,6 +517,15 @@
 				CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CFC5510E2C147AC200F08E21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CFC5510F2C147AD700F08E21 /* Date+Extensions.swift */,
+				CFC551112C147C2200F08E21 /* View+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -689,6 +700,7 @@
 				CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */,
 				CFC550E02C135BCB00F08E21 /* ArticleDTO.swift in Sources */,
 				CFC550A22C1110DD00F08E21 /* RealmManager.swift in Sources */,
+				CFC551122C147C2200F08E21 /* View+Extensions.swift in Sources */,
 				CFC5510D2C145F8200F08E21 /* BoxView.swift in Sources */,
 				CFC5509D2C11108600F08E21 /* RemoteDataSource.swift in Sources */,
 				CFC550EE2C135D8300F08E21 /* HeadlinesViewModel.swift in Sources */,
@@ -697,9 +709,9 @@
 				CFC550EA2C135CC900F08E21 /* ArticlesAPIEndpoint.swift in Sources */,
 				CFC550C72C12FBE100F08E21 /* DataModelProtocol.swift in Sources */,
 				CFC550E62C135C3200F08E21 /* ArticlesRepository.swift in Sources */,
+				CFC551102C147AD700F08E21 /* Date+Extensions.swift in Sources */,
 				CFC550892C11056700F08E21 /* DIContainer.swift in Sources */,
 				CFC5509B2C11105900F08E21 /* CategoriesRepository.swift in Sources */,
-				CFC551022C13A0D100F08E21 /* SaveArticleViewModel.swift in Sources */,
 				CFC551002C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift in Sources */,
 				CFC550C02C12F9E800F08E21 /* SourcesResponse.swift in Sources */,
 				CFC551062C14543F00F08E21 /* DeleteSavedArticleUseCase.swift in Sources */,

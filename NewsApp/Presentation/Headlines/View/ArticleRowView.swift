@@ -29,9 +29,15 @@ struct ArticleRowView: View {
             } else {
                 Color.gray.frame(width: 100, height: 100)
             }
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 4) {
                 Text(article.title)
                     .font(.headline)
+                Text(article.sourceName)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Text(article.publishedAt.formattedDate())
+                    .font(.caption)
+                    .foregroundColor(.secondary)
                 Text(article.description ?? "")
                     .font(.subheadline)
                     .foregroundColor(.secondary)
