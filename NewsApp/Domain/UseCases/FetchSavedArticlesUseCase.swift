@@ -13,22 +13,13 @@ protocol FetchSavedArticlesUseCaseProtocol {
 }
 
 class FetchSavedArticlesUseCase: FetchSavedArticlesUseCaseProtocol {
-    private let realmManager: RealmManagerProtocol
-
-    init(realmManager: RealmManagerProtocol) {
-        self.realmManager = realmManager
+    private let repository: ArticlesRepositoryProtocol
+    
+    init(repository: ArticlesRepositoryProtocol) {
+        self.repository = repository
     }
-
+    
     func execute() -> AnyPublisher<[ArticleEntity], APIError> {
-           return Future<[ArticleEntity], APIError> { promise in
-               do {
-                   let realmArticles = try self.realmManager.getAll(RealmArticleEntity.self)
-                   let articles = realmArticles.map { $0.articleEntity }
-                   promise(.success(articles))
-               } catch {
-                   promise(.failure(.localDBError))
-               }
-           }
-           .eraseToAnyPublisher()
-       }
-   }
+        return repository.fetchSavedArticles()
+    }
+}

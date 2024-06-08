@@ -8,26 +8,17 @@
 import Combine
 
 protocol SaveArticleUseCaseProtocol {
-    func execute(article: ArticleEntity) -> AnyPublisher<Void, Error>
+    func execute(article: ArticleEntity) -> AnyPublisher<Void, APIError>
 }
 
 class SaveArticleUseCase: SaveArticleUseCaseProtocol {
-    private let realmManager: RealmManagerProtocol
+    private let repository: ArticlesRepositoryProtocol
 
-    init(realmManager: RealmManagerProtocol) {
-        self.realmManager = realmManager
-    }
+      init(repository: ArticlesRepositoryProtocol) {
+          self.repository = repository
+      }
 
-    func execute(article: ArticleEntity) -> AnyPublisher<Void, Error> {
-        let realmArticleEntity = RealmArticleEntity(article: article)
-        return Future<Void, Error> { promise in
-            do {
-                try self.realmManager.add(realmArticleEntity)
-                promise(.success(()))
-            } catch {
-                promise(.failure(error))
-            }
-        }
-        .eraseToAnyPublisher()
-    }
+    func execute(article: ArticleEntity) -> AnyPublisher<Void, APIError> {
+           return repository.saveArticle(article)
+       }
 }

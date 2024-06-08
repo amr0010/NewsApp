@@ -49,7 +49,7 @@ class DIContainer {
     }()
     
     lazy var articleRepository: ArticlesRepositoryProtocol = {
-        ArticlesRepository(remoteDataSource: remoteDataSource, mapper: articleMapper)
+        ArticlesRepository(remoteDataSource: remoteDataSource, mapper: articleMapper, realmManager: realmManager)
     }()
 
     lazy var fetchCountriesUseCase: FetchCountriesUseCaseProtocol = {
@@ -65,11 +65,11 @@ class DIContainer {
     }()
     
     lazy var saveArticleUseCase: SaveArticleUseCaseProtocol = {
-        SaveArticleUseCase(realmManager: realmManager)
+        SaveArticleUseCase(repository: articleRepository)
     }()
     
     lazy var fetchSavedArticlesUseCase: FetchSavedArticlesUseCaseProtocol = {
-        FetchSavedArticlesUseCase(realmManager: realmManager)
+        FetchSavedArticlesUseCase(repository: articleRepository)
     }()
     
     lazy var searchArticlesUseCase: SearchArticlesUseCase = {
@@ -81,7 +81,7 @@ class DIContainer {
     }()
     
     lazy var deleteSavedArticleUseCase: DeleteSavedArticleUseCase = {
-        DeleteSavedArticleUseCase(realmManager: realmManager)
+        DeleteSavedArticleUseCase(repository: articleRepository)
     }()
     
 }
