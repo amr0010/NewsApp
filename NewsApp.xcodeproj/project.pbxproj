@@ -74,6 +74,7 @@
 		CFC551062C14543F00F08E21 /* DeleteSavedArticleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */; };
 		CFC551082C145BA200F08E21 /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */; };
 		CFC5510B2C145CB100F08E21 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CFC5510A2C145CB100F08E21 /* Kingfisher */; };
+		CFC5510D2C145F8200F08E21 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5510C2C145F8200F08E21 /* BoxView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleTabView.swift; sourceTree = "<group>"; };
 		CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSavedArticleUseCase.swift; sourceTree = "<group>"; };
 		CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
+		CFC5510C2C145F8200F08E21 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,8 +288,6 @@
 			children = (
 				CFC550AB2C11194D00F08E21 /* Common */,
 				CFC5507C2C10FCEE00F08E21 /* Coordinator */,
-				CFC5507B2C10FCE100F08E21 /* SavedArticles */,
-				CFC5507A2C10FCD600F08E21 /* Search */,
 				CFC550792C10FCCE00F08E21 /* Headlines */,
 				CFC550782C10FCBE00F08E21 /* Onboarding */,
 			);
@@ -401,20 +401,6 @@
 			path = Headlines;
 			sourceTree = "<group>";
 		};
-		CFC5507A2C10FCD600F08E21 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		CFC5507B2C10FCE100F08E21 /* SavedArticles */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SavedArticles;
-			sourceTree = "<group>";
-		};
 		CFC5507C2C10FCEE00F08E21 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +454,7 @@
 				CFC550AE2C12089C00F08E21 /* BouncyButton.swift */,
 				CFC550DB2C134D3B00F08E21 /* AppButton.swift */,
 				CFC551072C145BA200F08E21 /* ViewDidLoadModifier.swift */,
+				CFC5510C2C145F8200F08E21 /* BoxView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -702,6 +689,7 @@
 				CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */,
 				CFC550E02C135BCB00F08E21 /* ArticleDTO.swift in Sources */,
 				CFC550A22C1110DD00F08E21 /* RealmManager.swift in Sources */,
+				CFC5510D2C145F8200F08E21 /* BoxView.swift in Sources */,
 				CFC5509D2C11108600F08E21 /* RemoteDataSource.swift in Sources */,
 				CFC550EE2C135D8300F08E21 /* HeadlinesViewModel.swift in Sources */,
 				CFC550DE2C135BAE00F08E21 /* ArticlesResponseDTO.swift in Sources */,

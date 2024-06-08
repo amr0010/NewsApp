@@ -9,7 +9,12 @@ import SwiftUI
 
 struct CountrySelectionView: View {
     @ObservedObject var viewModel: OnboardingViewModel
-
+    
+    let columns = [
+        GridItem(.flexible(minimum: 150, maximum: 200)),
+        GridItem(.flexible(minimum: 150, maximum: 200))
+    ]
+    
     var body: some View {
         VStack {
             Text("Select Country")
@@ -18,29 +23,18 @@ struct CountrySelectionView: View {
                 .padding()
             SearchBar(text: $viewModel.searchText)
             ScrollView {
-                LazyVStack(spacing: 10) {
+                LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(viewModel.filteredCountries) { country in
-                        HStack {
-                            Text(country.flag).padding(.horizontal)
-                            Text(country.name)
-                                .font(.headline)
-                                .padding()
-                            Spacer()
-                            if viewModel.selectedCountry?.code == country.code {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.blue)
-                                    .padding()
-                            }
-                        }
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .shadow(radius: 5)
-                        .padding()
-                        .onTapGesture {
+                        BoxView(
+                            title: country.flag,
+                            subtitle: country.code,
+                            isSelected: viewModel.selectedCountry?.code == country.code
+                        ) {
                             viewModel.selectCountry(country)
                         }
                     }
                 }
+                .padding()
             }
             if let errorMessage = viewModel.errorMessage {
                 Text(errorMessage)
@@ -49,11 +43,9 @@ struct CountrySelectionView: View {
             }
         }
         .padding()
-        .background(Color.cyan)
         .onAppear {
             viewModel.loadCountries()
         }
-        
+        .background(Color(.white))
     }
 }
-

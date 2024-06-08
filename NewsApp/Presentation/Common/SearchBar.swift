@@ -14,7 +14,6 @@ struct SearchBar: View {
         HStack {
             Image(systemName: "magnifyingglass")
             TextField("Search", text: $text)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .autocapitalization(.none)
             if !text.isEmpty {
                 Button(action: {
