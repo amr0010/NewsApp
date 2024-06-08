@@ -18,6 +18,14 @@ class HeadlinesViewModel: ObservableObject {
             fetchHeadlines()
         }
     }
+    @Published var categories: [String] = []
+    @Published var selectedCategory: String? {
+            didSet {
+                if let category = selectedCategory {
+//                    fetchArticles(for: category)
+                }
+            }
+        }
     
     @Published var searchText: String = "" {
         didSet {
@@ -62,6 +70,7 @@ class HeadlinesViewModel: ObservableObject {
               }, receiveValue: { [weak self] data in
                   guard let data = data else { return }
                   self?.onboardingData = data
+                  self?.categories = data.categoriesArray
               })
               .store(in: &cancellables)
       }

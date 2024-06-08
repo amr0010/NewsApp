@@ -16,7 +16,7 @@ struct HeadlinesTabView: View {
                VStack {
                    SearchBar(text: $viewModel.searchText)
                        .padding()
-                   
+                   CategoryButtonsView(viewModel: viewModel)
                    List(viewModel.articles) { article in
                        ArticleRowView(article: article, onBookmarkTapped: { article in
                            viewModel.toggleBookmark(for: article)
@@ -31,3 +31,32 @@ struct HeadlinesTabView: View {
            }
     }
 }
+
+
+struct CategoryButtonsView: View {
+    @ObservedObject var viewModel: HeadlinesViewModel
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack {
+                ForEach(viewModel.categories, id: \.self) { category in
+                    Button(action: {
+//                        viewModel.selectCategory(category)
+                    }) {
+                        Text(category)
+                            .padding()
+                            .background(viewModel.selectedCategory == category ? Color.blue : Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(10)
+                    }
+                }
+            }
+            .padding()
+        }
+    }
+}
+
+
+
+
+
