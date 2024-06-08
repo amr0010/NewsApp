@@ -19,7 +19,7 @@ struct HeadlinesTabView: View {
                    
                    List(viewModel.articles) { article in
                        ArticleRowView(article: article, onBookmarkTapped: { article in
-                           viewModel.saveArticle(article)
+                           viewModel.toggleBookmark(for: article)
                        })
 
                    }

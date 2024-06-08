@@ -53,14 +53,11 @@ class AppCoordinator: ObservableObject {
             onboardingUseCase: diContainer.onboardingUseCase,
             searchArticlesUseCase: diContainer.searchArticlesUseCase,
             saveArticleUseCase: diContainer.saveArticleUseCase,
-            fetchSavedArticlesUseCase: diContainer.fetchSavedArticlesUseCase
+            fetchSavedArticlesUseCase: diContainer.fetchSavedArticlesUseCase,
+            deleteSavedArticleUseCase: diContainer.deleteSavedArticleUseCase
         )
         
-        let savedArticleViewModel = SaveArticleViewModel(
-            fetchSavedArticlesUseCase: diContainer.fetchSavedArticlesUseCase,
-            saveArticleUseCase: diContainer.saveArticleUseCase
-        )
-        headlinesCoordinator = HeadlinesCoordinator(headlinesViewModel: headlinesViewModel, savedArticleViewModel: savedArticleViewModel)
+        headlinesCoordinator = HeadlinesCoordinator(headlinesViewModel: headlinesViewModel)
     }
     
     func finishOnboarding() {

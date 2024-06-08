@@ -79,4 +79,9 @@ class DIContainer {
     lazy var fetchHeadlinesUseCase: FetchHeadlinesUseCase = {
         FetchHeadlinesUseCase(repository: articleRepository)
     }()
+    
+    lazy var deleteSavedArticleUseCase: DeleteSavedArticleUseCase = {
+        DeleteSavedArticleUseCase(realmManager: realmManager)
+    }()
+    
 }

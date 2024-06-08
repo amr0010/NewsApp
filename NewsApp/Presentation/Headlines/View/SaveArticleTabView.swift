@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct SaveArticleTabView: View {
-    @StateObject var viewModel: SaveArticleViewModel
+    @StateObject var viewModel: HeadlinesViewModel
     var body: some View {
         NavigationView {
             VStack {
@@ -19,13 +19,9 @@ struct SaveArticleTabView: View {
                 } else {
                     List(viewModel.savedArticles) { article in
                         ArticleRowView(article: article, onBookmarkTapped: { article in
-                            viewModel.removeSavedItem(article: article)
+                            viewModel.toggleBookmark(for: article)
                         })
-                            .onTapGesture {
-                                if let url = URL(string: article.url) {
-                                    UIApplication.shared.open(url)
-                                }
-                            }
+
                     }
                     .navigationTitle("Saved Articles")
                 }

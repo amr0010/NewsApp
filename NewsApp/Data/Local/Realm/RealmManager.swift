@@ -22,10 +22,18 @@ class RealmManager: RealmManagerProtocol {
     func add<T: Object>(_ object: T) {
         do {
             try realm.write {
-                realm.add(object)
+                if let primaryKey = T.primaryKey() {
+                    if realm.object(ofType: T.self, forPrimaryKey: object.value(forKey: primaryKey)!) != nil {
+                        realm.add(object, update: .modified)
+                    } else {
+                        realm.add(object)
+                    }
+                } else {
+                    realm.add(object)
+                }
             }
         } catch let error as NSError {
-            debugPrint("Failed to add object: \(error.localizedDescription)")
+            debugPrint("Failed to add or update object: \(error.localizedDescription)")
         }
     }
     
@@ -39,5 +47,18 @@ class RealmManager: RealmManagerProtocol {
         return Array(realm.objects(type))
     }
     
-    
+    func delete<T: Object>(_ object: T) throws {
+           do {
+               try realm.write {
+                   if let primaryKey = T.primaryKey(), let existingObject = realm.object(ofType: T.self, forPrimaryKey: object.value(forKey: primaryKey)!) {
+                       realm.delete(existingObject)
+                   } else {
+                       realm.delete(object)
+                   }
+               }
+           } catch let error as NSError {
+               debugPrint("Failed to delete object: \(error.localizedDescription)")
+               throw error
+           }
+       }
 }

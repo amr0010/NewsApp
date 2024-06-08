@@ -72,6 +72,7 @@
 		CFC551002C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */; };
 		CFC551022C13A0D100F08E21 /* SaveArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */; };
 		CFC551042C13A11600F08E21 /* SaveArticleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */; };
+		CFC551062C14543F00F08E21 /* DeleteSavedArticleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSavedArticlesUseCase.swift; sourceTree = "<group>"; };
 		CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleViewModel.swift; sourceTree = "<group>"; };
 		CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleTabView.swift; sourceTree = "<group>"; };
+		CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSavedArticleUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 				CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */,
 				CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */,
 				CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */,
+				CFC551052C14543F00F08E21 /* DeleteSavedArticleUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -706,6 +709,7 @@
 				CFC551022C13A0D100F08E21 /* SaveArticleViewModel.swift in Sources */,
 				CFC551002C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift in Sources */,
 				CFC550C02C12F9E800F08E21 /* SourcesResponse.swift in Sources */,
+				CFC551062C14543F00F08E21 /* DeleteSavedArticleUseCase.swift in Sources */,
 				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
 				CFC550DC2C134D3B00F08E21 /* AppButton.swift in Sources */,
 				CFC550F62C13763200F08E21 /* ArticleDetailView.swift in Sources */,

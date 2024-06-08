@@ -17,9 +17,10 @@ class RealmArticleEntity: Object {
     @objc dynamic var publishedAt: Date = Date()
     @objc dynamic var content: String = ""
     @objc dynamic var sourceName: String = ""
+    @objc dynamic var isBookmarked: Bool = false
 
     override static func primaryKey() -> String? {
-        return "id"
+        return "title"
     }
 
     convenience init(article: ArticleEntity) {
@@ -32,6 +33,7 @@ class RealmArticleEntity: Object {
         self.publishedAt = article.publishedAt
         self.content = article.content
         self.sourceName = article.sourceName
+        self.isBookmarked = article.isBookmarked
     }
 
     var articleEntity: ArticleEntity {
@@ -43,7 +45,8 @@ class RealmArticleEntity: Object {
             urlToImage: self.urlToImage,
             publishedAt: self.publishedAt,
             content: self.content,
-            sourceName: self.sourceName
+            sourceName: self.sourceName,
+            isBookmarked: self.isBookmarked
         )
     }
 }

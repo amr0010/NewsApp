@@ -19,7 +19,7 @@ struct NewsApp: App {
                     OnboardingView(viewModel: onboardingViewModel)
                         .environmentObject(appCoordinator)
                 } else if let headlinesCoordinator = appCoordinator.headlinesCoordinator {
-                    HeadlinesView(headlinesViewModel: headlinesCoordinator.headlinesViewModel, savedArticleViewModel: headlinesCoordinator.savedArticleViewModel)
+                    HeadlinesView(headlinesViewModel: headlinesCoordinator.headlinesViewModel)
                 }
             }
             .onAppear {
