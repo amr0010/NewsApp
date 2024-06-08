@@ -28,11 +28,16 @@ class RealmManager: RealmManagerProtocol {
             debugPrint("Failed to add object: \(error.localizedDescription)")
         }
     }
-
+    
     func get<T: Object>(_ type: T.Type) throws -> Results<T> {
-           let realm = try Realm()
-           return realm.objects(type)
-       }
-
+        let realm = try Realm()
+        return realm.objects(type)
+    }
+    
+    func getAll<T: Object>(_ type: T.Type) throws -> [T] {
+        let realm = try Realm()
+        return Array(realm.objects(type))
+    }
+    
     
 }

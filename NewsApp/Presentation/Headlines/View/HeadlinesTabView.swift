@@ -18,12 +18,10 @@ struct HeadlinesTabView: View {
                        .padding()
                    
                    List(viewModel.articles) { article in
-                       ArticleRowView(article: article)
-                           .onTapGesture {
-                               if let url = URL(string: article.url) {
-                                   UIApplication.shared.open(url)
-                               }
-                           }
+                       ArticleRowView(article: article, onBookmarkTapped: { article in
+                           viewModel.saveArticle(article)
+                       })
+
                    }
                    .navigationTitle("Headlines")
                    .onAppear {

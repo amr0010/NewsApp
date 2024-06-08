@@ -16,5 +16,6 @@ struct ArticleEntity: Identifiable {
     let publishedAt: Date
     let content: String
     let sourceName: String
+    var isBookmarked: Bool = false
 }
 

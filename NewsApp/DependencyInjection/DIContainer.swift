@@ -64,6 +64,14 @@ class DIContainer {
         OnboardingUseCase(realmManager: realmManager)
     }()
     
+    lazy var saveArticleUseCase: SaveArticleUseCaseProtocol = {
+        SaveArticleUseCase(realmManager: realmManager)
+    }()
+    
+    lazy var fetchSavedArticlesUseCase: FetchSavedArticlesUseCaseProtocol = {
+        FetchSavedArticlesUseCase(realmManager: realmManager)
+    }()
+    
     lazy var searchArticlesUseCase: SearchArticlesUseCase = {
         SearchArticlesUseCase(repository: articleRepository)
     }()

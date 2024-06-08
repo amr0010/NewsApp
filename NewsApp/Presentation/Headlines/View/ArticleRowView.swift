@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct ArticleRowView: View {
-    let article: ArticleEntity
-    @State private var isBookmarked: Bool = false
-    
+    var article: ArticleEntity
+    @State var isBookmarked: Bool = false
+    var onBookmarkTapped: (ArticleEntity) -> Void
+
     var body: some View {
         HStack(alignment: .top) {
             if let urlToImage = article.urlToImage, let url = URL(string: urlToImage) {
@@ -23,6 +24,11 @@ struct ArticleRowView: View {
                     ProgressView()
                         .frame(width: 100, height: 100)
                 }
+                .onTapGesture {
+                    if let url = URL(string: article.url) {
+                        UIApplication.shared.open(url)
+                    }
+                }
             } else {
                 Color.gray.frame(width: 100, height: 100)
             }
@@ -33,14 +39,20 @@ struct ArticleRowView: View {
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
+            .onTapGesture {
+                if let url = URL(string: article.url) {
+                    UIApplication.shared.open(url)
+                }
+            }
             Spacer()
             Button(action: {
-                isBookmarked.toggle()
+                onBookmarkTapped(article)
             }) {
-                Image(systemName: isBookmarked ? "bookmark.fill" : "bookmark")
-                    .foregroundColor(isBookmarked ? .blue : .gray)
+                Image(systemName: article.isBookmarked ? "bookmark.fill" : "bookmark")
+                    .foregroundColor(article.isBookmarked ? .blue : .gray)
             }
         }
+        
         .padding(.vertical, 8)
     }
 }

@@ -12,6 +12,7 @@ class HeadlinesViewModel: ObservableObject {
     @Published var articles: [ArticleEntity] = []
     @Published var errorMessage: String?
     @Published var isLoading: Bool = false
+    @Published var savedArticles: [ArticleEntity] = []
     @Published var onboardingData: OnboardingEntity? {
         didSet {
             fetchHeadlines()
@@ -27,15 +28,25 @@ class HeadlinesViewModel: ObservableObject {
     private let fetchHeadlinesUseCase: FetchHeadlinesUseCaseProtocol
     private let onboardingUseCase: OnboardingUseCaseProtocol
     private let searchArticlesUseCase: SearchArticlesUseCaseProtocol
+    private let saveArticleUseCase: SaveArticleUseCaseProtocol
+    private let fetchSavedArticlesUseCase: FetchSavedArticlesUseCaseProtocol
+
 
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(fetchHeadlinesUseCase: FetchHeadlinesUseCaseProtocol,
-         onboardingUseCase: OnboardingUseCaseProtocol, searchArticlesUseCase: SearchArticlesUseCaseProtocol) {
+    init(
+        fetchHeadlinesUseCase: FetchHeadlinesUseCaseProtocol,
+        onboardingUseCase: OnboardingUseCaseProtocol,
+        searchArticlesUseCase: SearchArticlesUseCaseProtocol,
+        saveArticleUseCase: SaveArticleUseCaseProtocol,
+        fetchSavedArticlesUseCase: FetchSavedArticlesUseCaseProtocol
+    ) {
         self.fetchHeadlinesUseCase = fetchHeadlinesUseCase
         self.onboardingUseCase = onboardingUseCase
         self.searchArticlesUseCase = searchArticlesUseCase
+        self.saveArticleUseCase = saveArticleUseCase
+        self.fetchSavedArticlesUseCase = fetchSavedArticlesUseCase
     }
     
     private func loadOnboardingData() {
@@ -58,14 +69,21 @@ class HeadlinesViewModel: ObservableObject {
     
     private func fetchHeadlines() {
         guard let onboardingData else { return }
-        fetchHeadlinesUseCase.execute(onboardingEntity: onboardingData)
+        Publishers.Zip(fetchSavedArticlesUseCase.execute(), fetchHeadlinesUseCase.execute(onboardingEntity: onboardingData))
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
                 }
-            }, receiveValue: { articles in
-                self.articles = articles
+            }, receiveValue: { (savedArticles, articles) in
+                let updatedArticles = articles.compactMap({ article in
+                    var article = article
+                    if savedArticles.contains(where: {$0.title == article.title}) {
+                        article.isBookmarked = true
+                    }
+                    return article
+                })
+                self.articles = updatedArticles
             })
             .store(in: &cancellables)
     }
@@ -89,4 +107,17 @@ class HeadlinesViewModel: ObservableObject {
             })
             .store(in: &cancellables)
     }
+    
+    func saveArticle(_ article: ArticleEntity) {
+            saveArticleUseCase.execute(article: article)
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { completion in
+                    if case .failure(let error) = completion {
+                        self.errorMessage = error.localizedDescription
+                    }
+                }, receiveValue: {
+                    print("Article saved successfully")
+                })
+                .store(in: &cancellables)
+        }
 }

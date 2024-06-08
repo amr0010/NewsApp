@@ -67,6 +67,11 @@
 		CFC550F42C13762100F08E21 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F32C13762100F08E21 /* ArticleRowView.swift */; };
 		CFC550F62C13763200F08E21 /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F52C13763200F08E21 /* ArticleDetailView.swift */; };
 		CFC550F82C13860F00F08E21 /* SearchArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */; };
+		CFC550FC2C13984700F08E21 /* RealmArticleEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FB2C13984700F08E21 /* RealmArticleEntity.swift */; };
+		CFC550FE2C13987900F08E21 /* SaveArticleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */; };
+		CFC551002C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */; };
+		CFC551022C13A0D100F08E21 /* SaveArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */; };
+		CFC551042C13A11600F08E21 /* SaveArticleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +155,11 @@
 		CFC550F32C13762100F08E21 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		CFC550F52C13763200F08E21 /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchArticlesUseCase.swift; sourceTree = "<group>"; };
+		CFC550FB2C13984700F08E21 /* RealmArticleEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmArticleEntity.swift; sourceTree = "<group>"; };
+		CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleUseCase.swift; sourceTree = "<group>"; };
+		CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSavedArticlesUseCase.swift; sourceTree = "<group>"; };
+		CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleViewModel.swift; sourceTree = "<group>"; };
+		CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveArticleTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +359,7 @@
 				CFC550C82C12FC0600F08E21 /* CategoryEntity.swift */,
 				CFC550D72C13414800F08E21 /* OnboardingEntity.swift */,
 				CFC550E12C135BFC00F08E21 /* ArticleEntity.swift */,
+				CFC550FB2C13984700F08E21 /* RealmArticleEntity.swift */,
 			);
 			path = Entites;
 			sourceTree = "<group>";
@@ -361,6 +372,8 @@
 				CFC550D92C13439800F08E21 /* OnboardingUseCase.swift */,
 				CFC550E32C135C1B00F08E21 /* FetchHeadlinesUseCase.swift */,
 				CFC550F72C13860F00F08E21 /* SearchArticlesUseCase.swift */,
+				CFC550FD2C13987900F08E21 /* SaveArticleUseCase.swift */,
+				CFC550FF2C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -495,6 +508,7 @@
 			isa = PBXGroup;
 			children = (
 				CFC550ED2C135D8300F08E21 /* HeadlinesViewModel.swift */,
+				CFC551012C13A0D100F08E21 /* SaveArticleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -506,6 +520,7 @@
 				CFC550F12C135EE700F08E21 /* HeadlinesTabView.swift */,
 				CFC550F32C13762100F08E21 /* ArticleRowView.swift */,
 				CFC550F52C13763200F08E21 /* ArticleDetailView.swift */,
+				CFC551032C13A11600F08E21 /* SaveArticleTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,6 +671,7 @@
 				CFC550972C110FD100F08E21 /* FetchCountriesUseCase.swift in Sources */,
 				CFC550412C10F13800F08E21 /* ContentView.swift in Sources */,
 				CFC550992C110FE600F08E21 /* FetchCategoriesUseCase.swift in Sources */,
+				CFC551042C13A11600F08E21 /* SaveArticleTabView.swift in Sources */,
 				CFC550852C1100C300F08E21 /* OnboardingCoordinator.swift in Sources */,
 				CFC550AD2C11195C00F08E21 /* SearchBar.swift in Sources */,
 				CFC550C92C12FC0600F08E21 /* CategoryEntity.swift in Sources */,
@@ -672,6 +688,7 @@
 				CFC5508F2C11067F00F08E21 /* CountrySelectionView.swift in Sources */,
 				CFC550BA2C12E9C400F08E21 /* HTTPMethod.swift in Sources */,
 				CFC550C52C12FA5500F08E21 /* CategoryMapper.swift in Sources */,
+				CFC550FE2C13987900F08E21 /* SaveArticleUseCase.swift in Sources */,
 				CFC550E42C135C1B00F08E21 /* FetchHeadlinesUseCase.swift in Sources */,
 				CFC550DA2C13439800F08E21 /* OnboardingUseCase.swift in Sources */,
 				CFC550832C11009700F08E21 /* AppCoordinator.swift in Sources */,
@@ -686,6 +703,8 @@
 				CFC550E62C135C3200F08E21 /* ArticlesRepository.swift in Sources */,
 				CFC550892C11056700F08E21 /* DIContainer.swift in Sources */,
 				CFC5509B2C11105900F08E21 /* CategoriesRepository.swift in Sources */,
+				CFC551022C13A0D100F08E21 /* SaveArticleViewModel.swift in Sources */,
+				CFC551002C139E2E00F08E21 /* FetchSavedArticlesUseCase.swift in Sources */,
 				CFC550C02C12F9E800F08E21 /* SourcesResponse.swift in Sources */,
 				CFC550BE2C12F72900F08E21 /* APIError.swift in Sources */,
 				CFC550DC2C134D3B00F08E21 /* AppButton.swift in Sources */,
@@ -697,6 +716,7 @@
 				CFC550D82C13414800F08E21 /* OnboardingEntity.swift in Sources */,
 				CFC550872C1100D200F08E21 /* HeadlinesCoordinator.swift in Sources */,
 				CFC550A42C1111C300F08E21 /* CountriesRepository.swift in Sources */,
+				CFC550FC2C13984700F08E21 /* RealmArticleEntity.swift in Sources */,
 				CFC550912C11069700F08E21 /* CategorySelectionView.swift in Sources */,
 				CFC550AA2C1117A000F08E21 /* CountryManager.swift in Sources */,
 				CFC5503F2C10F13800F08E21 /* NewsApp.swift in Sources */,

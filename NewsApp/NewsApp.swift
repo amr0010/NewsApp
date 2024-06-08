@@ -9,16 +9,17 @@ import SwiftUI
 
 @main
 struct NewsApp: App {
-    @StateObject private var appCoordinator = AppCoordinator(diContainer: DIContainer.shared)
+    @ObservedObject private var appCoordinator = AppCoordinator(diContainer: DIContainer.shared)
 
     var body: some Scene {
         WindowGroup {
             Group {
                 if let onboardingCoordinator = appCoordinator.onboardingCoordinator {
-                    OnboardingView(coordinator: onboardingCoordinator, viewModel: onboardingCoordinator.onboardingViewModel)
+                    let onboardingViewModel = OnboardingViewModel(fetchCountriesUseCase: DIContainer.shared.fetchCountriesUseCase, fetchCategoriesUseCase: DIContainer.shared.fetchCategoriesUseCase, onboardingUseCase: DIContainer.shared.onboardingUseCase, onboardingCoordinator: onboardingCoordinator)
+                    OnboardingView(viewModel: onboardingViewModel)
                         .environmentObject(appCoordinator)
                 } else if let headlinesCoordinator = appCoordinator.headlinesCoordinator {
-                    HeadlinesView(headlinesViewModel: headlinesCoordinator.headlinesViewModel)
+                    HeadlinesView(headlinesViewModel: headlinesCoordinator.headlinesViewModel, savedArticleViewModel: headlinesCoordinator.savedArticleViewModel)
                 }
             }
             .onAppear {

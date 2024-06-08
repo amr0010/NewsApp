@@ -5,8 +5,6 @@
 //  Created by Amr Magdy on 06/06/2024.
 //
 
-import Foundation
-import Combine
 
 import Combine
 import Foundation
@@ -39,6 +37,7 @@ class APIClient: APIClientProtocol {
         return session.dataTaskPublisher(for: request)
             .tryMap { data, response in
                 guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                    debugPrint("ERROR \(response)")
                     throw APIError.responseError
                 }
                 return data

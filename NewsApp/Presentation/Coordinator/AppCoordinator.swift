@@ -33,12 +33,13 @@ class AppCoordinator: ObservableObject {
     }
     
     private func startOnboarding() {
+        onboardingCoordinator = OnboardingCoordinator()
+
         let onboardingViewModel = OnboardingViewModel(
                    fetchCountriesUseCase: diContainer.fetchCountriesUseCase,
                    fetchCategoriesUseCase: diContainer.fetchCategoriesUseCase,
-                   onboardingUseCase: diContainer.onboardingUseCase
+                   onboardingUseCase: diContainer.onboardingUseCase, onboardingCoordinator: onboardingCoordinator!
                )
-        onboardingCoordinator = OnboardingCoordinator(viewModel: onboardingViewModel)
         onboardingCoordinator?.didFinishOnboarding
             .sink(receiveValue: { [weak self] in
                 self?.finishOnboarding()
@@ -47,8 +48,19 @@ class AppCoordinator: ObservableObject {
     }
     
     private func startHeadlines() {
-        let headlinesViewModel = HeadlinesViewModel(fetchHeadlinesUseCase: diContainer.fetchHeadlinesUseCase, onboardingUseCase: diContainer.onboardingUseCase, searchArticlesUseCase: diContainer.searchArticlesUseCase)
-        headlinesCoordinator = HeadlinesCoordinator(headlinesViewModel: headlinesViewModel)
+        let headlinesViewModel = HeadlinesViewModel(
+            fetchHeadlinesUseCase: diContainer.fetchHeadlinesUseCase,
+            onboardingUseCase: diContainer.onboardingUseCase,
+            searchArticlesUseCase: diContainer.searchArticlesUseCase,
+            saveArticleUseCase: diContainer.saveArticleUseCase,
+            fetchSavedArticlesUseCase: diContainer.fetchSavedArticlesUseCase
+        )
+        
+        let savedArticleViewModel = SaveArticleViewModel(
+            fetchSavedArticlesUseCase: diContainer.fetchSavedArticlesUseCase,
+            saveArticleUseCase: diContainer.saveArticleUseCase
+        )
+        headlinesCoordinator = HeadlinesCoordinator(headlinesViewModel: headlinesViewModel, savedArticleViewModel: savedArticleViewModel)
     }
     
     func finishOnboarding() {

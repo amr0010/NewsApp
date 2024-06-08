@@ -9,8 +9,10 @@ import Combine
 
 class HeadlinesCoordinator: ObservableObject {
     @Published var headlinesViewModel: HeadlinesViewModel
+    @Published var savedArticleViewModel: SaveArticleViewModel
 
-    init(headlinesViewModel: HeadlinesViewModel) {
+    init(headlinesViewModel: HeadlinesViewModel, savedArticleViewModel: SaveArticleViewModel) {
         self.headlinesViewModel = headlinesViewModel
+        self.savedArticleViewModel = savedArticleViewModel
     }
 }

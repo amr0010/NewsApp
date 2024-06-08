@@ -9,14 +9,14 @@ import SwiftUI
 
 struct HeadlinesView: View {
     @StateObject var headlinesViewModel: HeadlinesViewModel
-
+    @StateObject var savedArticleViewModel: SaveArticleViewModel
     var body: some View {
         TabView {
             HeadlinesTabView(viewModel: headlinesViewModel)
                 .tabItem {
                     Label("All Articles", systemImage: "list.bullet")
                 }
-            Text("")
+            SaveArticleTabView(viewModel: savedArticleViewModel)
                 .tabItem {
                     Label("Saved Articles", systemImage: "bookmark")
                 }

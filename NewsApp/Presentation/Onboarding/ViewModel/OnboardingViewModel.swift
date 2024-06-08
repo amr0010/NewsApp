@@ -28,12 +28,15 @@ class OnboardingViewModel: ObservableObject {
     private let fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol
     private let onboardingUseCase: OnboardingUseCaseProtocol
     private var cancellables = Set<AnyCancellable>()
+    private let onboardingCoordinator: OnboardingCoordinator
 
     // Initializer to set use cases and realm manager
-    init(fetchCountriesUseCase: FetchCountriesUseCaseProtocol, fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol, onboardingUseCase: OnboardingUseCaseProtocol) {
+    init(fetchCountriesUseCase: FetchCountriesUseCaseProtocol, fetchCategoriesUseCase: FetchCategoriesUseCaseProtocol, onboardingUseCase: OnboardingUseCaseProtocol,
+         onboardingCoordinator: OnboardingCoordinator) {
         self.fetchCountriesUseCase = fetchCountriesUseCase
         self.fetchCategoriesUseCase = fetchCategoriesUseCase
         self.onboardingUseCase = onboardingUseCase
+        self.onboardingCoordinator = onboardingCoordinator
 
         // Enable the Next button if at least 3 categories are selected
         $selectedCategories
@@ -115,9 +118,9 @@ class OnboardingViewModel: ObservableObject {
                 if case .failure(let error) = completion {
                     self.errorMessage = error.localizedDescription
                 }
-            }, receiveValue: {
+            }, receiveValue: { [weak self] in
                 print("success")
-                self.onboardingCompleted.send()
+                self?.onboardingCoordinator.finishOnboarding()
             })
             .store(in: &cancellables)
     }

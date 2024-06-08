@@ -12,6 +12,7 @@ enum APIError: Error, LocalizedError {
     case responseError
     case decodingError
     case unknownError
+    case localDBError
 
     var errorDescription: String? {
         switch self {
@@ -23,6 +24,8 @@ enum APIError: Error, LocalizedError {
             return "Decoding error"
         case .unknownError:
             return "Unknown error"
+        case .localDBError:
+            return "Local DB Error"
         }
     }
 }

@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @ObservedObject var coordinator: OnboardingCoordinator
     @StateObject var viewModel: OnboardingViewModel
     @State private var showCategorySelection = false
 
